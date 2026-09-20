@@ -1,0 +1,246 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LandingCard from '../components/LandingCard.astro';
+import Newsletter from '../components/Newsletter.astro';
+
+const landings = (await getCollection('landings', ({ data }) => data.published))
+  .sort((a, b) => b.data.updated.getTime() - a.data.updated.getTime());
+---
+
+<BaseLayout
+  title="Instrumenty muzyczne — poradniki i przewodniki zakupowe"
+  description="Praktyczne poradniki jak wybrać instrument muzyczny — dla dzieci, akustyczne, używane, profesjonalne. 35 lat doświadczenia z rzeczywistej sprzedaży."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Instrumentymuzyczne.pl</div>
+        <h1>Wybór instrumentu bez chodzenia po sklepach</h1>
+        <p>
+          Poradniki napisane przez ludzi, którzy sprzedali tysiące instrumentów.
+          Bez ściemy, bez marketingowego blichtru — tylko to, co realnie
+          decyduje, czy dziecko dalej gra po pół roku.
+        </p>
+        <div class="hero-actions">
+          <a href="#poradniki" class="btn btn-primary">Przeglądaj poradniki</a>
+          <a href="https://muzyczny.pl" class="btn btn-outline" rel="noopener">
+            Przejdź do sklepu
+          </a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hero-sun" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFE4A0"/>
+              <stop offset="0.4" stop-color="#FDB84A"/>
+              <stop offset="1" stop-color="#F58F00"/>
+            </linearGradient>
+            <radialGradient id="hero-glow" cx="0.5" cy="0.55" r="0.5">
+              <stop offset="0" stop-color="#F58F00" stop-opacity="0.4"/>
+              <stop offset="1" stop-color="#F58F00" stop-opacity="0"/>
+            </radialGradient>
+            <mask id="hero-stripes">
+              <rect width="400" height="400" fill="white"/>
+              <rect x="0" y="200" width="400" height="3" fill="black"/>
+              <rect x="0" y="212" width="400" height="4" fill="black"/>
+              <rect x="0" y="228" width="400" height="6" fill="black"/>
+            </mask>
+          </defs>
+          <ellipse cx="200" cy="220" rx="200" ry="140" fill="url(#hero-glow)"/>
+          <g mask="url(#hero-stripes)">
+            <circle cx="200" cy="220" r="110" fill="url(#hero-sun)"/>
+          </g>
+          <g stroke="#F58F00" fill="none" stroke-width="0.6" opacity="0.55">
+            <line x1="200" y1="220" x2="-80" y2="400"/>
+            <line x1="200" y1="220" x2="20" y2="400"/>
+            <line x1="200" y1="220" x2="100" y2="400"/>
+            <line x1="200" y1="220" x2="160" y2="400"/>
+            <line x1="200" y1="220" x2="200" y2="400"/>
+            <line x1="200" y1="220" x2="240" y2="400"/>
+            <line x1="200" y1="220" x2="300" y2="400"/>
+            <line x1="200" y1="220" x2="380" y2="400"/>
+            <line x1="200" y1="220" x2="480" y2="400"/>
+            <line x1="0" y1="400" x2="400" y2="400"/>
+            <line x1="0" y1="360" x2="400" y2="360"/>
+            <line x1="0" y1="325" x2="400" y2="325"/>
+            <line x1="0" y1="298" x2="400" y2="298"/>
+            <line x1="0" y1="278" x2="400" y2="278"/>
+            <line x1="0" y1="262" x2="400" y2="262"/>
+            <line x1="0" y1="250" x2="400" y2="250"/>
+            <line x1="0" y1="240" x2="400" y2="240"/>
+            <line x1="0" y1="232" x2="400" y2="232"/>
+            <line x1="0" y1="226" x2="400" y2="226"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Landings grid -->
+  <section id="poradniki" class="section landings">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Najnowsze poradniki</h2>
+        <a href="/poradniki/">Wszystkie</a>
+      </div>
+      <div class="landing-grid">
+        {landings.slice(0, 6).map((landing) => (
+          <LandingCard
+            title={landing.data.title}
+            description={landing.data.description}
+            href={`/${landing.slug}/`}
+            readingTime={landing.data.readingTime}
+            category={landing.data.category}
+            hero={landing.data.hero}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>
+
+<style>
+  /* Hero — echoes muzyczny.net dark banner style but repositioned
+     for a content hub: bigger headline, softer descriptor */
+  .hero {
+    background: var(--ink);
+    color: var(--white);
+    padding: 72px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--orange);
+    padding: 4px 12px;
+    border: 1px solid rgba(245, 143, 0, 0.3);
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin: 0 0 20px;
+    max-width: 540px;
+  }
+
+  .hero-content p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #B8B8B8;
+    max-width: 500px;
+    margin: 0 0 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-actions .btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .hero-art {
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
+    margin-left: auto;
+    opacity: 0.9;
+  }
+
+  /* Section spacing */
+  .section {
+    padding: 72px 0;
+  }
+
+  .section:nth-of-type(odd) { background: var(--white); }
+
+  .categories { background: var(--cream); }
+
+  /* Category grid */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .cat-card {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .cat-card:hover {
+    border-color: var(--orange);
+    background: var(--orange-tint);
+  }
+
+  .cat-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .cat-count {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* Landing grid */
+  .landing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-art { max-width: 240px; margin: 0 auto; }
+    .hero-content h1 { font-size: 32px; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .landing-grid { grid-template-columns: repeat(2, 1fr); }
+    .section { padding: 48px 0; }
+  }
+
+  @media (max-width: 560px) {
+    .hero { padding: 48px 0; }
+    .hero-content h1 { font-size: 28px; }
+    .hero-content p { font-size: 15px; }
+    .landing-grid { grid-template-columns: 1fr; }
+  }
+</style>

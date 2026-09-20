@@ -1,0 +1,84 @@
+---
+export interface Props {
+  title: string;
+  sub: string;
+  url: string;
+}
+const { title, sub, url } = Astro.props;
+---
+
+<a href={url} class="shop-cta" rel="noopener">
+  <div class="shop-cta-body">
+    <div class="shop-cta-title">{title}</div>
+    <div class="shop-cta-sub">{sub}</div>
+  </div>
+  <div class="shop-cta-action">
+    Zobacz w sklepie
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M13 5l7 7-7 7"/>
+    </svg>
+  </div>
+</a>
+
+<style>
+  .shop-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--cream);
+    border-left: 4px solid var(--orange);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 32px 0;
+    color: var(--ink);
+    transition: background 0.15s;
+    font-family: var(--font-ui);
+  }
+
+  .shop-cta:hover {
+    background: var(--cream-strong);
+  }
+
+  .shop-cta-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .shop-cta-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .shop-cta-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+    padding: 8px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    flex-shrink: 0;
+  }
+
+  .shop-cta:hover .shop-cta-action {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  @media (max-width: 600px) {
+    .shop-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .shop-cta-action { align-self: stretch; justify-content: center; }
+  }
+</style>

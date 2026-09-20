@@ -1,0 +1,321 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ShopCTA from '../components/ShopCTA.astro';
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    h1?: string;
+    description: string;
+    keyword: string;
+    category: string;
+    readingTime: number;
+    updated: Date;
+    hero?: string;
+    faq?: Array<{ q: string; a: string }>;
+    ctaCategories?: Array<{ label: string; sub: string; url: string }>;
+  };
+  slug: string;
+}
+
+const { frontmatter, slug } = Astro.props;
+const {
+  title,
+  h1 = title,
+  description,
+  keyword,
+  category,
+  readingTime,
+  updated,
+  hero,
+  faq = [],
+  ctaCategories = [],
+} = frontmatter;
+
+const updatedFormatted = updated.toLocaleDateString('pl-PL', {
+  year: 'numeric',
+  month: 'long',
+});
+
+const canonical = `https://muzyczny.online/${slug}/`;
+
+// FAQ schema
+const faqSchema = faq.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+} : null;
+
+// Article schema
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: h1,
+  description,
+  datePublished: updated.toISOString(),
+  dateModified: updated.toISOString(),
+  author: { '@type': 'Organization', name: 'muzyczny.pl' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'muzyczny.pl',
+    logo: { '@type': 'ImageObject', url: 'https://muzyczny.online/logo.png' },
+  },
+  mainEntityOfPage: canonical,
+};
+---
+
+<BaseLayout title={`${title} — muzyczny.online`} description={description} canonical={canonical}>
+  <article class="landing">
+    {hero && (
+      <div class="landing-hero" aria-hidden="true">
+        <img src={hero} alt="" loading="eager" fetchpriority="high" />
+      </div>
+    )}
+    <nav class="breadcrumbs wrap-narrow" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="/poradniki/">Poradniki</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{title}</span>
+    </nav>
+
+    <header class="landing-header wrap-narrow">
+      <div class="landing-cat">{category}</div>
+      <h1>{h1}</h1>
+      <div class="landing-meta">
+        <span>Aktualizacja: {updatedFormatted}</span>
+        <span class="dot" aria-hidden="true">•</span>
+        <span>{readingTime} min czytania</span>
+        <span class="dot" aria-hidden="true">•</span>
+        <span>Zespół muzyczny.pl</span>
+      </div>
+    </header>
+
+    <div class="wrap-narrow prose">
+      <slot />
+
+      {ctaCategories.length > 0 && (
+        <div class="cta-block">
+          <h2>Sprawdź w sklepie</h2>
+          {ctaCategories.map((cta) => (
+            <ShopCTA title={cta.label} sub={cta.sub} url={cta.url} />
+          ))}
+        </div>
+      )}
+
+      {faq.length > 0 && (
+        <section class="faq">
+          <h2>Najczęściej zadawane pytania</h2>
+          {faq.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <div class="faq-answer">{item.a}</div>
+            </details>
+          ))}
+        </section>
+      )}
+
+      <div class="landing-footer-cta">
+        <div class="lfc-title">Wybraliście już instrument?</div>
+        <div class="lfc-sub">Pełna oferta w sklepie muzyczny.pl</div>
+        <a href="https://muzyczny.pl" class="btn btn-ink" rel="noopener">
+          Przejdź do sklepu
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+</BaseLayout>
+
+<style>
+  .landing {
+    padding: 0 0 64px;
+  }
+
+  .landing-hero {
+    width: 100%;
+    max-height: 420px;
+    overflow: hidden;
+    background: var(--ink);
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .landing-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    margin-top: 32px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .landing-hero + .breadcrumbs,
+  .landing-hero + * .breadcrumbs {
+    margin-top: 0;
+  }
+
+  .breadcrumbs a {
+    color: var(--text-muted);
+    transition: color 0.15s;
+  }
+
+  .breadcrumbs a:hover { color: var(--orange-dark); }
+
+  .breadcrumbs span[aria-current] { color: var(--ink); font-weight: 500; }
+
+  .landing-header {
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .landing-cat {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--orange-dark);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .landing-header h1 {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+
+  .landing-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .landing-meta .dot { opacity: 0.4; }
+
+  .cta-block {
+    background: var(--cream);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    margin: 48px 0;
+  }
+
+  .cta-block h2 {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+
+  .cta-block :global(.shop-cta) {
+    margin: 8px 0;
+    background: var(--white);
+  }
+
+  .faq {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .faq h2 {
+    font-family: var(--font-ui);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 20px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 4px 0;
+  }
+
+  .faq-item summary {
+    padding: 16px 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+    color: var(--orange-dark);
+  }
+
+  .faq-answer {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    padding: 0 0 20px;
+  }
+
+  .landing-footer-cta {
+    margin-top: 56px;
+    padding: 32px;
+    text-align: center;
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+  }
+
+  .lfc-title {
+    font-family: var(--font-ui);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .lfc-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 780px) {
+    .landing-header h1 { font-size: 26px; }
+    .landing-meta { flex-wrap: wrap; gap: 6px 10px; }
+  }
+</style>

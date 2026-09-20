@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracja: tropikalna scena synthwave z ukulele">
+  <defs>
+    <linearGradient id="uk-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0812"/>
+      <stop offset="0.4" stop-color="#1a0f14"/>
+      <stop offset="0.62" stop-color="#3d1f0a"/>
+      <stop offset="0.7" stop-color="#5a2a08"/>
+    </linearGradient>
+    <linearGradient id="uk-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE4A0"/>
+      <stop offset="0.4" stop-color="#FDB84A"/>
+      <stop offset="1" stop-color="#F58F00"/>
+    </linearGradient>
+    <linearGradient id="uk-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1408"/>
+      <stop offset="1" stop-color="#0a0405"/>
+    </linearGradient>
+    <radialGradient id="uk-glow" cx="0.5" cy="0.62" r="0.4">
+      <stop offset="0" stop-color="#F58F00" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#F58F00" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="uk-sun-stripes">
+      <rect width="1200" height="500" fill="white"/>
+      <rect x="0" y="290" width="1200" height="3" fill="black"/>
+      <rect x="0" y="298" width="1200" height="4" fill="black"/>
+      <rect x="0" y="308" width="1200" height="5" fill="black"/>
+      <rect x="0" y="320" width="1200" height="6" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="310" fill="url(#uk-sky)"/>
+
+  <!-- Stars -->
+  <g fill="#FDD478" opacity="0.75">
+    <circle cx="120" cy="60" r="1"/>
+    <circle cx="280" cy="90" r="1.2"/>
+    <circle cx="410" cy="45" r="0.8"/>
+    <circle cx="540" cy="110" r="1"/>
+    <circle cx="720" cy="70" r="1.2"/>
+    <circle cx="880" cy="55" r="1"/>
+    <circle cx="990" cy="120" r="0.8"/>
+    <circle cx="1100" cy="85" r="1"/>
+    <circle cx="200" cy="140" r="0.6"/>
+    <circle cx="450" cy="160" r="0.6"/>
+    <circle cx="850" cy="150" r="0.6"/>
+  </g>
+
+  <!-- Sun glow -->
+  <ellipse cx="600" cy="310" rx="500" ry="200" fill="url(#uk-glow)"/>
+
+  <!-- Sun with chrome stripes -->
+  <g mask="url(#uk-sun-stripes)">
+    <circle cx="600" cy="310" r="140" fill="url(#uk-sun)"/>
+  </g>
+
+  <!-- Distant mountains -->
+  <path d="M0 310 L120 260 L200 285 L320 240 L440 275 L560 250 L680 270 L820 245 L960 280 L1080 260 L1200 285 L1200 320 L0 320 Z" fill="#0d0508" opacity="0.85"/>
+
+  <!-- Ground -->
+  <rect y="310" width="1200" height="190" fill="url(#uk-ground)"/>
+
+  <!-- Perspective grid: vertical converging lines -->
+  <g stroke="#F58F00" fill="none" stroke-width="0.8" opacity="0.5">
+    <line x1="600" y1="310" x2="-200" y2="500"/>
+    <line x1="600" y1="310" x2="-50" y2="500"/>
+    <line x1="600" y1="310" x2="100" y2="500"/>
+    <line x1="600" y1="310" x2="230" y2="500"/>
+    <line x1="600" y1="310" x2="340" y2="500"/>
+    <line x1="600" y1="310" x2="430" y2="500"/>
+    <line x1="600" y1="310" x2="510" y2="500"/>
+    <line x1="600" y1="310" x2="600" y2="500"/>
+    <line x1="600" y1="310" x2="690" y2="500"/>
+    <line x1="600" y1="310" x2="770" y2="500"/>
+    <line x1="600" y1="310" x2="860" y2="500"/>
+    <line x1="600" y1="310" x2="970" y2="500"/>
+    <line x1="600" y1="310" x2="1100" y2="500"/>
+    <line x1="600" y1="310" x2="1250" y2="500"/>
+    <line x1="600" y1="310" x2="1400" y2="500"/>
+  </g>
+  <!-- Perspective grid: horizontal lines (spacing tightens toward horizon) -->
+  <g stroke="#F58F00" fill="none" stroke-width="0.8" opacity="0.5">
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="410" x2="1200" y2="410"/>
+    <line x1="0" y1="380" x2="1200" y2="380"/>
+    <line x1="0" y1="358" x2="1200" y2="358"/>
+    <line x1="0" y1="342" x2="1200" y2="342"/>
+    <line x1="0" y1="330" x2="1200" y2="330"/>
+    <line x1="0" y1="322" x2="1200" y2="322"/>
+    <line x1="0" y1="316" x2="1200" y2="316"/>
+  </g>
+
+  <!-- Left palm tree cluster -->
+  <g fill="#000">
+    <!-- Palm 1 tall -->
+    <path d="M120 500 Q118 430 122 370 Q125 320 130 280 Q133 240 138 210 L135 210 Q127 245 122 285 Q118 340 115 400 Q112 460 116 500 Z"/>
+    <!-- Fronds -->
+    <path d="M135 210 Q100 195 60 200 Q90 205 125 220 Z"/>
+    <path d="M135 210 Q170 195 210 200 Q175 205 140 220 Z"/>
+    <path d="M136 210 Q120 175 90 155 Q120 180 135 218 Z"/>
+    <path d="M136 210 Q152 175 182 155 Q150 180 138 218 Z"/>
+    <path d="M136 208 Q145 195 175 190 Q155 200 140 215 Z"/>
+    <path d="M136 208 Q127 195 97 190 Q117 200 132 215 Z"/>
+  </g>
+  <g fill="#000">
+    <!-- Palm 2 shorter -->
+    <path d="M60 500 Q58 440 62 400 Q64 360 68 330 L65 330 Q60 365 58 405 Q56 455 58 500 Z"/>
+    <path d="M65 330 Q40 320 15 322 Q40 330 62 340 Z"/>
+    <path d="M65 330 Q90 320 115 322 Q90 330 68 340 Z"/>
+    <path d="M66 330 Q54 305 34 292 Q56 310 65 335 Z"/>
+    <path d="M66 330 Q78 305 98 292 Q76 310 67 335 Z"/>
+  </g>
+
+  <!-- Right palm tree cluster -->
+  <g fill="#000">
+    <path d="M1080 500 Q1078 430 1082 370 Q1085 320 1090 280 Q1093 240 1098 210 L1095 210 Q1087 245 1082 285 Q1078 340 1075 400 Q1072 460 1076 500 Z"/>
+    <path d="M1095 210 Q1060 195 1020 200 Q1050 205 1085 220 Z"/>
+    <path d="M1095 210 Q1130 195 1170 200 Q1135 205 1100 220 Z"/>
+    <path d="M1096 210 Q1080 175 1050 155 Q1080 180 1095 218 Z"/>
+    <path d="M1096 210 Q1112 175 1142 155 Q1110 180 1098 218 Z"/>
+    <path d="M1096 208 Q1105 195 1135 190 Q1115 200 1100 215 Z"/>
+    <path d="M1096 208 Q1087 195 1057 190 Q1077 200 1092 215 Z"/>
+  </g>
+  <g fill="#000">
+    <path d="M1150 500 Q1148 440 1152 400 Q1154 360 1158 330 L1155 330 Q1150 365 1148 405 Q1146 455 1148 500 Z"/>
+    <path d="M1155 330 Q1130 320 1105 322 Q1130 330 1152 340 Z"/>
+    <path d="M1155 330 Q1180 320 1205 322 Q1180 330 1158 340 Z"/>
+    <path d="M1156 330 Q1144 305 1124 292 Q1146 310 1155 335 Z"/>
+  </g>
+
+  <!-- Ukulele silhouette centered on horizon -->
+  <g fill="#000" transform="translate(600, 380)">
+    <!-- Body (rounded, pear-shaped) -->
+    <ellipse cx="0" cy="0" rx="52" ry="70"/>
+    <!-- Waist cut -->
+    <ellipse cx="0" cy="-30" rx="42" ry="30" fill="#000"/>
+    <!-- Neck -->
+    <rect x="-7" y="-155" width="14" height="90"/>
+    <!-- Nut -->
+    <rect x="-10" y="-165" width="20" height="6" rx="1"/>
+    <!-- Headstock -->
+    <path d="M-14 -195 L14 -195 L18 -168 L-18 -168 Z"/>
+    <!-- Tuning pegs -->
+    <circle cx="-14" cy="-186" r="2.5" fill="#F58F00" opacity="0.7"/>
+    <circle cx="14" cy="-186" r="2.5" fill="#F58F00" opacity="0.7"/>
+    <circle cx="-14" cy="-176" r="2.5" fill="#F58F00" opacity="0.7"/>
+    <circle cx="14" cy="-176" r="2.5" fill="#F58F00" opacity="0.7"/>
+    <!-- Sound hole highlight -->
+    <circle cx="0" cy="10" r="14" fill="#1a0f14"/>
+    <circle cx="0" cy="10" r="14" fill="none" stroke="#F58F00" stroke-width="0.8" opacity="0.4"/>
+  </g>
+</svg>

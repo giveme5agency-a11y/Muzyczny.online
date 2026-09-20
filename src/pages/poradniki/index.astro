@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LandingCard from '../../components/LandingCard.astro';
+
+const landings = (await getCollection('landings', ({ data }) => data.published))
+  .sort((a, b) => b.data.updated.getTime() - a.data.updated.getTime());
+---
+
+<BaseLayout
+  title="Wszystkie poradniki — muzyczny.online"
+  description="Kompletna lista przewodników zakupowych po instrumentach muzycznych. Wybór wg wieku, budżetu, poziomu zaawansowania."
+>
+  <section class="page-header">
+    <div class="wrap-narrow">
+      <div class="eyebrow">Poradniki</div>
+      <h1>Wszystkie przewodniki zakupowe</h1>
+      <p>Praktyczne poradniki napisane przez ludzi ze sklepowej strony lady. Bez marketingu, bez ściemy.</p>
+    </div>
+  </section>
+
+  <section class="wrap listing">
+    <div class="grid">
+      {landings.map((landing) => (
+        <LandingCard
+          title={landing.data.title}
+          description={landing.data.description}
+          href={`/${landing.slug}/`}
+          readingTime={landing.data.readingTime}
+          category={landing.data.category}
+          hero={landing.data.hero}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--cream);
+    padding: 56px 0 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--orange-dark);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .page-header h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+
+  .page-header p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 500px;
+  }
+
+  .listing {
+    padding-bottom: 64px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .page-header h1 { font-size: 26px; } }
+</style>

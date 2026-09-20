@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import LandingLayout from '../layouts/LandingLayout.astro';
+
+export async function getStaticPaths() {
+  const landings = await getCollection('landings', ({ data }) => data.published);
+  return landings.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<LandingLayout frontmatter={entry.data} slug={entry.slug}>
+  <Content />
+</LandingLayout>

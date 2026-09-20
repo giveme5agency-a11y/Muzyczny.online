@@ -1,0 +1,121 @@
+---
+// Echoes the 4-icon strip on muzyczny.net (dostawa/wysyłka/zwrot/płatności)
+// but adapted to a content hub — trust signals for a poradnik, not a shop.
+const items = [
+  {
+    icon: 'book',
+    title: '20+ poradników',
+    sub: 'Każdy oparty na doświadczeniu',
+  },
+  {
+    icon: 'refresh',
+    title: 'Aktualizowane co miesiąc',
+    sub: 'Ceny i modele na bieżąco',
+  },
+  {
+    icon: 'shield',
+    title: '35 lat na rynku',
+    sub: 'Wiedza z rzeczywistej sprzedaży',
+  },
+  {
+    icon: 'headphones',
+    title: 'Kontakt z ekspertem',
+    sub: 'Wątpliwości? Napisz do nas',
+  },
+];
+---
+
+<section class="features">
+  <div class="wrap features-grid">
+    {items.map((item) => (
+      <div class="feature">
+        <div class="feature-icon" aria-hidden="true">
+          {item.icon === 'book' && (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            </svg>
+          )}
+          {item.icon === 'refresh' && (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 0 0-15-6.7L3 8"/>
+              <path d="M3 3v5h5"/>
+              <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/>
+              <path d="M16 16h5v5"/>
+            </svg>
+          )}
+          {item.icon === 'shield' && (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          )}
+          {item.icon === 'headphones' && (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+              <path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/>
+            </svg>
+          )}
+        </div>
+        <div class="feature-text">
+          <div class="feature-title">{item.title}</div>
+          <div class="feature-sub">{item.sub}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features {
+    background: var(--white);
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--orange);
+    color: var(--ink);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .feature-icon svg { width: 22px; height: 22px; }
+
+  .feature-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .feature-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>
