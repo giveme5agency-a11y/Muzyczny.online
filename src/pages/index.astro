@@ -31,7 +31,9 @@ const rest = landings.slice(1, 7);
           <span class="btn btn-ink btn-static">Sklep</span>
         </div>
       </div>
-      <div class="hero-art placeholder-pattern" aria-hidden="true"></div>
+     <div class="hero-art" aria-hidden="true">
+  <img src="/heroes/dziewczynka.jpg" alt="" />
+</div>
     </div>
   </section>
 
@@ -131,12 +133,19 @@ const rest = landings.slice(1, 7);
     cursor: default;
   }
 
-  .hero-art {
-    aspect-ratio: 4 / 3;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--line);
-    min-height: 300px;
-  }
+ .hero-art {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
   /* ============ Poradniki section ============ */
   .section-poradniki {
