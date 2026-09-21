@@ -1,6 +1,6 @@
 ---
-// Header — visually related to muzyczny.net but repositioned for a content hub:
-// same orange logo mark, but nav = poradniki (guides), not product categories.
+// Header — v2 layout, muzyczny.pl name/link removed
+// "Sklep" pill is now a non-navigating span (per user request)
 const nav = [
   { label: 'Poradniki', href: '/poradniki/' },
   { label: 'Kategorie', href: '/kategorie/' },
@@ -12,10 +12,15 @@ const nav = [
   <div class="wrap header-inner">
     <a href="/" class="brand" aria-label="muzyczny.online — strona główna">
       <span class="brand-text">
-        <span class="brand-primary">muzyczny</span><span class="brand-accent">.online</span>
+        muzyczny.<span class="brand-accent">online</span>
       </span>
-      <span class="brand-tag">poradniki</span>
+      <span class="brand-tag">Poradniki</span>
     </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu" />
+    <label for="nav-toggle" class="nav-btn" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
 
     <nav class="site-nav" aria-label="Główna nawigacja">
       {nav.map((item) => (
@@ -23,12 +28,7 @@ const nav = [
       ))}
     </nav>
 
-    <a href="https://muzyczny.pl" class="shop-link" rel="noopener">
-      <span>Sklep muzyczny.pl</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M7 17L17 7M17 7H8M17 7v9"/>
-      </svg>
-    </a>
+    <span class="shop-pill" aria-label="Sklep">Sklep</span>
   </div>
 </header>
 
@@ -46,9 +46,8 @@ const nav = [
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    height: 68px;
+    gap: 16px;
+    height: 66px;
   }
 
   .brand {
@@ -58,76 +57,116 @@ const nav = [
     flex-shrink: 0;
   }
 
-  .brand-mark {
-    display: block;
-    line-height: 0;
-  }
-
   .brand-text {
+    font-size: 17px;
     font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.2px;
     color: var(--ink);
-    display: flex;
-    align-items: baseline;
   }
 
-  .brand-primary { color: var(--ink); }
-  .brand-secondary { color: var(--ink); }
   .brand-accent { color: var(--orange); }
 
   .brand-tag {
-    margin-left: 8px;
     font-size: 10px;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    padding: 3px 8px;
+    padding: 3px 7px;
     border: 1px solid var(--line);
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
   .site-nav {
+    margin: 0 auto;
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 30px;
     font-size: 14px;
-    font-weight: 500;
   }
 
   .site-nav a {
-    color: var(--ink);
-    position: relative;
     padding: 6px 0;
-    transition: color 0.15s;
+    color: var(--text);
   }
 
-  .site-nav a:hover { color: var(--orange); }
-
-  .shop-link {
+  .shop-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
-    padding: 8px 14px;
     background: var(--cream);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    transition: background 0.15s, color 0.15s;
+    padding: 10px 16px;
+    cursor: default;
   }
 
-  .shop-link:hover {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: var(--ink);
-  }
+  /* Mobile menu */
+  .nav-toggle { display: none; }
+  .nav-btn { display: none; }
 
   @media (max-width: 780px) {
-    .site-nav, .brand-tag { display: none; }
-    .header-inner { height: 60px; }
-    .brand-text { font-size: 14px; }
-    .shop-link span { display: none; }
+    .header-inner { gap: 12px; }
+    .brand-tag { display: none; }
+    .brand-text { font-size: 16px; }
+    .shop-pill { padding: 9px 14px; font-size: 12px; }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      width: 44px;
+      height: 44px;
+      margin-left: auto;
+      cursor: pointer;
+      border-radius: var(--radius);
+      order: 3;
+    }
+    .nav-btn span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--ink);
+      margin: 0 auto;
+      transition: transform 0.18s var(--ease-out), opacity 0.18s var(--ease-out);
+    }
+    .nav-toggle:checked + .nav-btn span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle:checked + .nav-btn span:nth-child(2) { opacity: 0; }
+    .nav-toggle:checked + .nav-btn span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .site-nav {
+      position: absolute;
+      top: 66px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 8px 0;
+      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s var(--ease-out);
+    }
+    .site-nav a {
+      padding: 14px 20px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .site-nav a:last-child { border-bottom: none; }
+
+    .nav-toggle:checked ~ .site-nav {
+      max-height: 300px;
+    }
+
+    .shop-pill { order: 2; }
   }
 </style>

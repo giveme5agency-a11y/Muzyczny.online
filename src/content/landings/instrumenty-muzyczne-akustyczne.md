@@ -1,24 +1,31 @@
 ---
-title: "Instrumenty muzyczne akustyczne"
-h1: "Instrumenty muzyczne akustyczne — przewodnik po kategorii"
-description: "Wszystko o akustycznych instrumentach — od gitar i pianin po skrzypce i instrumenty dęte. Kiedy warto akustyk, a kiedy lepiej wersja cyfrowa/elektryczna."
-keyword: "instrumenty muzyczne akustyczne"
-category: "akustyczne"
+title: Instrumenty muzyczne akustyczne
+h1: Instrumenty muzyczne akustyczne — przewodnik po kategorii
+description: Wszystko o akustycznych instrumentach — od gitar i pianin po skrzypce i instrumenty dęte. Kiedy warto akustyk, a kiedy lepiej wersja cyfrowa/elektryczna.
+keyword: instrumenty muzyczne akustyczne
+category: akustyczne
 readingTime: 9
-hero: '/heroes/akustyczne.svg'
+hero: /heroes/akustyczne.jpg
 updated: 2026-09-10
 faq:
-  - q: "Akustyczna czy elektryczna gitara na start?"
-    a: "Akustyczna klasyczna z nylonowymi strunami — palce mniej bolą, technika łatwiej się utrwala, i jeśli po pół roku będziesz chciał grać rocka, przełączenie na elektryczną będzie bezbolesne. Odwrotnie już nie działa."
-  - q: "Czy akustyczne pianino jest lepsze od cyfrowego?"
-    a: "W absolutnym topie tak — brzmienie i dynamika prawdziwego pianina są nie do podrobienia. Ale dla 90% domowych użytkowników cyfrowy Yamaha P-125 lub Roland FP-30X daje 85% wrażeń przy 1/5 kosztu, plus słuchawki, brak strojenia i mobilność."
+- q: Akustyczna czy elektryczna gitara na start?
+  a: Akustyczna klasyczna z nylonowymi strunami — palce mniej bolą, technika łatwiej się utrwala, i jeśli po pół roku będziesz chciał grać rocka, przełączenie na elektryczną będzie bezbolesne. Odwrotnie
+    już nie działa.
+- q: Czy akustyczne pianino jest lepsze od cyfrowego?
+  a: W absolutnym topie tak — brzmienie i dynamika prawdziwego pianina są nie do podrobienia. Ale dla 90% domowych użytkowników cyfrowy Yamaha P-125 lub Roland FP-30X daje 85% wrażeń przy 1/5 kosztu, plus
+    słuchawki, brak strojenia i mobilność.
 ctaCategories:
-  - label: "Gitary akustyczne"
-    sub: "Klasyczne, dreadnought, western — wszystkie rozmiary"
-    url: "https://muzyczny.pl/kategoria/gitary-akustyczne/"
-  - label: "Pianina akustyczne"
-    sub: "Nowe i sprawdzone używane z gwarancją stroiciela"
-    url: "https://muzyczny.pl/kategoria/pianina-akustyczne/"
+- label: Gitary akustyczne
+  sub: Klasyczne, dreadnought, western — wszystkie rozmiary
+- label: Pianina akustyczne
+  sub: Nowe i sprawdzone używane z gwarancją stroiciela
+lead: Akustyczny instrument brzmi bez prądu, ale wymaga stroju, wilgotności 45–55% i jest głośniejszy niż myślisz. Dla większości domowych zastosowań pianino **cyfrowe** wygrywa z akustykiem — 85% wrażeń
+  za 1/5 kosztu.
+keyTakeaways:
+- Akustyk ma sens tylko przy **nauce z nauczycielem** albo grze scenicznej.
+- 'W bloku: **cyfrowe wygrywa** — słuchawki, brak strojenia, mobilność.'
+- Pianino akustyczne = **250–500 zł/rok** na strojenie i przeglądy.
+- Gitara klasyczna na start (nylon), elektryczna po 6 miesiącach nauki.
 ---
 
 Akustyczny znaczy „grający własnym pudłem rezonansowym, bez prądu". Ta pozornie prosta definicja niesie kilka bardzo praktycznych konsekwencji: instrument akustyczny brzmi zawsze, wymaga stroju, zwykle wymaga wilgotności powietrza 45-55%, jest głośniejszy niż myślisz w bloku, i nie da się ściszyć słuchawkami.

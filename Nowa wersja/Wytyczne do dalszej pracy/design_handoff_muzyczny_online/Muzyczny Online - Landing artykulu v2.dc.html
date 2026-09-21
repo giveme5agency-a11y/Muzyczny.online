@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #F58F00; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary .chev { transition: transform 0.18s cubic-bezier(0.2,0.7,0.3,1); }
+  details[open] > summary .chev { transform: rotate(180deg); }
+  details[open] > summary { background: #F7F5F0; }
+</style>
+</helmet>
+
+<div style="font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #2C2C2C; line-height: 1.5;">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #E8E6E1;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 20px; height: 66px; display: flex; align-items: center; gap: 16px;">
+      <a href="Muzyczny Online — Homepage v2.dc.html" style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.2px; color: #1A1A1A;">muzyczny.<span style="color: #F58F00;">online</span></span>
+        <span style="font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B; border: 1px solid #E8E6E1; border-radius: 4px; padding: 3px 7px;">Poradniki</span>
+      </a>
+      <nav style="margin: 0 auto; display: flex; align-items: center; gap: 30px; font-size: 14px;">
+        <a href="#" style="padding: 6px 0;">Poradniki</a>
+        <a href="#" style="padding: 6px 0;">Kategorie</a>
+        <a href="#" style="padding: 6px 0;">O nas</a>
+      </nav>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: #1A1A1A; background: #F7F5F0; border: 1px solid #E8E6E1; border-radius: 6px; padding: 10px 16px;" style-hover="border-color: #1A1A1A;">Sklep muzyczny.pl <span style="font-size: 12px; color: #6B6B6B;">↗</span></a>
+    </div>
+  </header>
+
+  <nav aria-label="Breadcrumbs" style="border-bottom: 1px solid #E8E6E1;">
+    <div style="max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12px; color: #6B6B6B;">
+      <a href="Muzyczny Online — Homepage v2.dc.html">Strona główna</a>
+      <span style="color: #C9C6BF;">/</span>
+      <a href="#">Poradniki</a>
+      <span style="color: #C9C6BF;">/</span>
+      <span style="color: #9A9A9A;">Jak wybrać pierwsze ukulele</span>
+    </div>
+  </nav>
+
+  <article style="max-width: 760px; margin: 0 auto; padding: 46px 20px 0;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+      <span style="color: #B36400;">Ukulele</span>
+      <span style="color: #E8E6E1;">|</span>
+      <span style="color: #9A9A9A;">9 min czytania</span>
+      <span style="color: #E8E6E1;">|</span>
+      <span style="color: #9A9A9A;">Aktualizacja: <time datetime="2026-09-20">wrzesień 2026</time></span>
+    </div>
+
+    <h1 style="margin: 16px 0 0; font-size: 40px; line-height: 1.12; font-weight: 700; letter-spacing: -1.1px; color: #1A1A1A; text-wrap: pretty;">Jak wybrać pierwsze ukulele — rozmiary, brzmienia i marki dla początkujących</h1>
+
+    <p style="margin: 22px 0 0; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 20px; line-height: 1.6; font-weight: 600; color: #1A1A1A; text-wrap: pretty;">Dla dorosłego początkującego najlepszym wyborem jest ukulele koncertowe w cenie 250–500 zł. Dla dziecka poniżej 10 lat — sopranowe za 200–400 zł, z dobrymi strunami i kluczami zamkniętymi.</p>
+
+    <div style="margin: 30px 0 0; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 16px 18px; background: #F7F5F0; border-radius: 8px;">
+      <div style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background-color: #E4DFD4; background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.07) 0 6px, transparent 6px 12px);"></div>
+      <div style="flex: 1 1 200px; min-width: 0; font-size: 13px; line-height: 1.55; color: #4A4238;">
+        <strong style="font-weight: 600; color: #1A1A1A;">Redakcja muzyczny.pl</strong> — 35 lat sprzedaży instrumentów, tysiące rozmów z rodzicami i początkującymi. <a href="#" style="color: #B36400; text-decoration: underline; text-underline-offset: 3px;">O nas</a>
+      </div>
+    </div>
+
+    <nav aria-label="Spis treści" style="margin: 34px 0 0; border-top: 1px solid #E8E6E1; border-bottom: 1px solid #E8E6E1; padding: 20px 0;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B6B;">Spis treści</div>
+      <div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px 28px; font-size: 14px;">
+        <a href="#rodzaje" style="display: flex; gap: 10px;"><span style="color: #C9C6BF; font-family: 'JetBrains Mono', monospace; font-size: 12px;">01</span> 4 rodzaje ukulele</a>
+        <a href="#cena" style="display: flex; gap: 10px;"><span style="color: #C9C6BF; font-family: 'JetBrains Mono', monospace; font-size: 12px;">02</span> Ile kosztuje dobre ukulele</a>
+        <a href="#marki" style="display: flex; gap: 10px;"><span style="color: #C9C6BF; font-family: 'JetBrains Mono', monospace; font-size: 12px;">03</span> Marki warte uwagi</a>
+        <a href="#akcesoria" style="display: flex; gap: 10px;"><span style="color: #C9C6BF; font-family: 'JetBrains Mono', monospace; font-size: 12px;">04</span> Akcesoria na start</a>
+        <a href="#wnioski" style="display: flex; gap: 10px;"><span style="color: #C9C6BF; font-family: 'JetBrains Mono', monospace; font-size: 12px;">05</span> Kluczowe wnioski</a>
+        <a href="#faq" style="display: flex; gap: 10px;"><span style="color: #C9C6BF; font-family: 'JetBrains Mono', monospace; font-size: 12px;">06</span> Najczęstsze pytania</a>
+      </div>
+    </nav>
+
+    <div style="margin: 40px 0 0; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 17px; line-height: 1.65; color: #2C2C2C;">
+
+      <p style="margin: 0 0 18px; text-wrap: pretty;">Ukulele to mały, czterostrunowy instrument szarpany pochodzący z Hawajów, strojony w układzie G-C-E-A. Ma cztery struny zamiast sześciu, krótszą menzurę i miękkie struny nylonowe — jest tańsze, lżejsze i mniej wymagające fizycznie niż gitara. Pierwsze chwyty i prostą piosenkę opanujesz w kilka dni.</p>
+
+      <h2 id="rodzaje" style="font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 600; letter-spacing: -0.4px; color: #1A1A1A; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid #E8E6E1; scroll-margin-top: 80px; text-wrap: pretty;">Jakie są 4 rodzaje ukulele?</h2>
+      <p style="margin: 0 0 18px; text-wrap: pretty;">Ukulele produkuje się w czterech rozmiarach, które różnią się długością menzury, głośnością i brzmieniem. To pierwsza decyzja przed zakupem.</p>
+
+      <figure style="margin: 26px 0 30px;">
+        <div style="overflow-x: auto; border: 1px solid #E8E6E1; border-radius: 8px;">
+          <table style="width: 100%; min-width: 560px; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 14px;">
+            <thead>
+              <tr>
+                <th scope="col" style="padding: 13px 14px; text-align: left; background: #F7F5F0; border-bottom: 1px solid #E8E6E1; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6B6B;">Rozmiar</th>
+                <th scope="col" style="padding: 13px 14px; text-align: left; background: #F7F5F0; border-bottom: 1px solid #E8E6E1; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6B6B;">Menzura</th>
+                <th scope="col" style="padding: 13px 14px; text-align: left; background: #F7F5F0; border-bottom: 1px solid #E8E6E1; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6B6B;">Strój</th>
+                <th scope="col" style="padding: 13px 14px; text-align: left; background: #F7F5F0; border-bottom: 1px solid #E8E6E1; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6B6B;">Dla kogo</th>
+                <th scope="col" style="padding: 13px 14px; text-align: left; background: #F7F5F0; border-bottom: 1px solid #E8E6E1; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6B6B;">Cena</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" style="padding: 13px 14px; text-align: left; border-bottom: 1px solid #F0EEE9; font-weight: 600; color: #1A1A1A;">Sopranowe</th>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9;">ok. 33 cm</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9;">G-C-E-A</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9; color: #4A4238;">Dzieci, klasyczne brzmienie</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9; white-space: nowrap;">od 150 zł</td>
+              </tr>
+              <tr style="background: #FDF3E0;">
+                <th scope="row" style="padding: 13px 14px; text-align: left; border-bottom: 1px solid #F0EEE9; font-weight: 600; color: #1A1A1A;">Koncertowe</th>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9;">ok. 38 cm</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9;">G-C-E-A</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9; color: #4A4238;">Dorosły początkujący — złoty środek</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9; white-space: nowrap;">od 250 zł</td>
+              </tr>
+              <tr>
+                <th scope="row" style="padding: 13px 14px; text-align: left; border-bottom: 1px solid #F0EEE9; font-weight: 600; color: #1A1A1A;">Tenorowe</th>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9;">ok. 43 cm</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9;">G-C-E-A</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9; color: #4A4238;">Większe dłonie, gitarzyści</td>
+                <td style="padding: 13px 14px; border-bottom: 1px solid #F0EEE9; white-space: nowrap;">od 350 zł</td>
+              </tr>
+              <tr>
+                <th scope="row" style="padding: 13px 14px; text-align: left; font-weight: 600; color: #1A1A1A;">Barytonowe</th>
+                <td style="padding: 13px 14px;">ok. 48 cm</td>
+                <td style="padding: 13px 14px;">D-G-B-E</td>
+                <td style="padding: 13px 14px; color: #4A4238;">Gitarzyści (strój jak 4 struny gitary)</td>
+                <td style="padding: 13px 14px; white-space: nowrap;">od 450 zł</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption style="margin-top: 10px; font-family: 'Inter', sans-serif; font-size: 12px; line-height: 1.5; color: #6B6B6B;">Cztery rozmiary ukulele — menzura, strój i orientacyjna cena startowa. Wyróżniony wiersz: najczęstszy wybór dorosłego początkującego.</figcaption>
+      </figure>
+
+      <p style="margin: 0 0 18px; text-wrap: pretty;"><strong style="font-weight: 600; color: #1A1A1A;">Sopranowe</strong> to klasyk — najmniejsze, najtańsze, o jasnym, dzwoniącym brzmieniu. Wadą jest ciasne rozmieszczenie progów przy większych dłoniach. <strong style="font-weight: 600; color: #1A1A1A;">Koncertowe</strong> jest głośniejsze i wygodniejsze; <strong style="font-weight: 600; color: #1A1A1A;">tenorowe</strong> brzmi głębiej, a <strong style="font-weight: 600; color: #1A1A1A;">barytonowe</strong> stroi się jak cztery najwyższe struny gitary.</p>
+      <p style="margin: 0 0 18px; text-wrap: pretty;">Szukasz instrumentu dla dziecka? Zajrzyj też do poradnika <a href="#" style="color: #B36400; border-bottom: 1px solid #FDF3E0;">instrumenty muzyczne dla dzieci</a> — rozmiary i budżety dla wszystkich instrumentów.</p>
+
+      <div style="margin: 36px 0; background: #1A1A1A; border-radius: 10px; padding: 26px 28px; display: flex; flex-wrap: wrap; gap: 22px; align-items: center; font-family: 'Inter', sans-serif;">
+        <div style="flex: 0 0 auto; width: 88px; height: 88px; border-radius: 8px; background-color: #2C2C2C; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0 8px, transparent 8px 16px);"></div>
+        <div style="flex: 1 1 220px; min-width: 0;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F58F00;">Sklep muzyczny.pl</div>
+          <div style="margin-top: 10px; font-size: 19px; font-weight: 600; letter-spacing: -0.3px; color: #FFFFFF;">Ukulele koncertowe od 250 zł</div>
+          <div style="margin-top: 8px; font-size: 14px; line-height: 1.55; color: #B8B8B8; text-wrap: pretty;">Flight, Kala, Fender — modele z tego poradnika, z gotowym kompletem strun Aquila.</div>
+        </div>
+        <a href="#" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; font-size: 14px; font-weight: 600; border-radius: 6px; background: #F58F00; color: #1A1A1A;" style-hover="background: #FFFFFF;">Zobacz w sklepie ↗</a>
+      </div>
+
+      <h2 id="cena" style="font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 600; letter-spacing: -0.4px; color: #1A1A1A; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid #E8E6E1; scroll-margin-top: 80px; text-wrap: pretty;">Ile kosztuje dobre ukulele dla początkującego?</h2>
+      <p style="margin: 0 0 18px; text-wrap: pretty;"><strong style="font-weight: 600; color: #1A1A1A;">Poniżej 200 zł</strong> — głównie ukulele zabawkowe o słabym brzmieniu i wątpliwym stroju. Dopuszczalne jako zabawka, nie do nauki.</p>
+      <p style="margin: 0 0 18px; text-wrap: pretty;"><strong style="font-weight: 600; color: #1A1A1A;">200–500 zł</strong> — rozsądny start. Flight NUS310 (ok. 300 zł), Kala KA-15S (ok. 350 zł), Fender Venice Soprano (ok. 450 zł), Mahalo MK1 (ok. 200 zł dla dziecka).</p>
+      <p style="margin: 0 0 18px; text-wrap: pretty;"><strong style="font-weight: 600; color: #1A1A1A;">500–1500 zł</strong> — ukulele z litego drewna (mahoń, koa), o bogatszym brzmieniu i lepszym wykończeniu.</p>
+
+      <h2 id="marki" style="font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 600; letter-spacing: -0.4px; color: #1A1A1A; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid #E8E6E1; scroll-margin-top: 80px; text-wrap: pretty;">Które marki ukulele warto znać?</h2>
+      <p style="margin: 0 0 18px; text-wrap: pretty;"><strong style="font-weight: 600; color: #1A1A1A;">Flight</strong> — dobry stosunek jakości do ceny, popularny w Polsce. <strong style="font-weight: 600; color: #1A1A1A;">Kala</strong> — amerykański specjalista, benchmark jakości. <strong style="font-weight: 600; color: #1A1A1A;">Fender</strong> — gitarowa estetyka i dobre przetworniki w wersjach elektroakustycznych. <strong style="font-weight: 600; color: #1A1A1A;">Mahalo</strong> — budżetowa, na pierwszy instrument dla dziecka. Lanikai, Cordoba i Ortega warto rozważyć przy drugim, lepszym ukulele.</p>
+
+      <h2 id="akcesoria" style="font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 600; letter-spacing: -0.4px; color: #1A1A1A; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid #E8E6E1; scroll-margin-top: 80px; text-wrap: pretty;">Jakie akcesoria kupić od razu?</h2>
+      <ul style="margin: 0 0 18px; padding-left: 22px;">
+        <li style="margin-bottom: 8px;"><strong style="font-weight: 600; color: #1A1A1A;">Tuner clip-on</strong> (ok. 50 zł) — niezbędny, ukulele wymaga strojenia.</li>
+        <li style="margin-bottom: 8px;"><strong style="font-weight: 600; color: #1A1A1A;">Pokrowiec</strong> (ok. 50–100 zł) — chroni instrument w transporcie.</li>
+        <li style="margin-bottom: 8px;"><strong style="font-weight: 600; color: #1A1A1A;">Komplet strun</strong> Aquila Nylgut albo Worth Brown (ok. 40 zł) — wymiana odmienia brzmienie tańszego modelu.</li>
+        <li style="margin-bottom: 8px;"><strong style="font-weight: 600; color: #1A1A1A;">Kapodaster</strong> — opcjonalnie, do gry w różnych tonacjach.</li>
+      </ul>
+
+      <div id="wnioski" style="margin: 44px 0 0; background: #F7F5F0; border-radius: 10px; padding: 26px 28px; scroll-margin-top: 80px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #1A1A1A;">Kluczowe wnioski</h2>
+        <ul style="margin: 14px 0 0; padding-left: 22px; font-size: 16px; line-height: 1.6;">
+          <li style="margin-bottom: 8px;">Dorosły początkujący: ukulele <strong style="font-weight: 600; color: #1A1A1A;">koncertowe</strong>, 250–500 zł.</li>
+          <li style="margin-bottom: 8px;">Dziecko 5–9 lat: <strong style="font-weight: 600; color: #1A1A1A;">sopranowe</strong>, 200–400 zł, klucze zamknięte.</li>
+          <li style="margin-bottom: 8px;">Gitarzysta: <strong style="font-weight: 600; color: #1A1A1A;">barytonowe</strong> (strój D-G-B-E) albo tenorowe.</li>
+          <li style="margin-bottom: 0;">Zawsze dokup tuner clip-on i — w tańszych modelach — struny Aquila.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <section id="faq" style="max-width: 760px; margin: 0 auto; padding: 56px 20px 0; scroll-margin-top: 80px;">
+    <h2 style="margin: 0 0 18px; font-size: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: #1A1A1A;">Najczęstsze pytania</h2>
+    <div>
+      <details style="border-top: 1px solid #E8E6E1;">
+        <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 16px; font-size: 16px; font-weight: 500; color: #1A1A1A; border-radius: 6px;">Czy ukulele jest łatwiejsze od gitary?<span class="chev" style="font-size: 13px; color: #F58F00;">▾</span></summary>
+        <div style="padding: 4px 16px 20px 28px; border-left: 2px solid #FDF3E0; margin: 0 16px 16px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 16px; line-height: 1.65; color: #2C2C2C; text-wrap: pretty;">Tak. Ukulele ma 4 struny zamiast 6, miękkie struny nylonowe i krótszą menzurę, więc dociskanie strun jest łatwe i bezbolesne. Pierwsze trzy chwyty można opanować w jeden wieczór.</p>
+        </div>
+      </details>
+      <details style="border-top: 1px solid #E8E6E1;">
+        <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 16px; font-size: 16px; font-weight: 500; color: #1A1A1A; border-radius: 6px;">Jakie ukulele kupić dziecku 7-letniemu?<span class="chev" style="font-size: 13px; color: #F58F00;">▾</span></summary>
+        <div style="padding: 4px 16px 20px 28px; border-left: 2px solid #FDF3E0; margin: 0 16px 16px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 16px; line-height: 1.65; color: #2C2C2C; text-wrap: pretty;">Ukulele sopranowe z dobrymi strunami (Aquila), w cenie 200–400 zł — Flight NUS310 albo Mahalo MK1. Sopranowe jest najmniejsze i najlżejsze, dobrze pasuje do małych dłoni.</p>
+        </div>
+      </details>
+      <details style="border-top: 1px solid #E8E6E1;">
+        <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 16px; font-size: 16px; font-weight: 500; color: #1A1A1A; border-radius: 6px;">Ile kosztuje dobre ukulele na start?<span class="chev" style="font-size: 13px; color: #F58F00;">▾</span></summary>
+        <div style="padding: 4px 16px 20px 28px; border-left: 2px solid #FDF3E0; margin: 0 16px 16px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 16px; line-height: 1.65; color: #2C2C2C; text-wrap: pretty;">Sensowny próg to 250–500 zł. Modele warte uwagi: Flight NUS310 (ok. 300 zł), Kala KA-15S (ok. 350 zł), Fender Venice (ok. 450 zł). Poniżej 150 zł to zwykle zabawki.</p>
+        </div>
+      </details>
+      <details style="border-top: 1px solid #E8E6E1; border-bottom: 1px solid #E8E6E1;">
+        <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 16px; font-size: 16px; font-weight: 500; color: #1A1A1A; border-radius: 6px;">Jaki jest strój ukulele?<span class="chev" style="font-size: 13px; color: #F58F00;">▾</span></summary>
+        <div style="padding: 4px 16px 20px 28px; border-left: 2px solid #FDF3E0; margin: 0 16px 16px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 16px; line-height: 1.65; color: #2C2C2C; text-wrap: pretty;">Sopranowe, koncertowe i tenorowe stroi się G-C-E-A. Barytonowe: D-G-B-E, czyli jak cztery najwyższe struny gitary.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section style="max-width: 760px; margin: 0 auto; padding: 52px 20px 0;">
+    <div style="background: #FFFFFF; border: 1px solid #E8E6E1; border-radius: 10px; overflow: hidden;">
+      <div style="height: 3px; background: #F58F00;"></div>
+      <div style="padding: 24px 26px 26px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+          <div style="font-size: 18px; font-weight: 600; letter-spacing: -0.3px; color: #1A1A1A;">Kup to, o czym czytasz</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B6B;">muzyczny.pl</div>
+        </div>
+        <div style="margin-top: 16px; display: flex; flex-direction: column;">
+          <a href="#" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 15px 0; border-top: 1px solid #F0EEE9;">
+            <span>
+              <span style="display: block; font-size: 15px; font-weight: 500; color: #1A1A1A;">Ukulele w sklepie</span>
+              <span style="display: block; margin-top: 4px; font-size: 13px; color: #6B6B6B;">Sopranowe, koncertowe, tenorowe, barytonowe — od 150 zł</span>
+            </span>
+            <span style="flex: 0 0 auto; font-size: 15px; color: #F58F00;">↗</span>
+          </a>
+          <a href="#" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 15px 0; border-top: 1px solid #F0EEE9;">
+            <span>
+              <span style="display: block; font-size: 15px; font-weight: 500; color: #1A1A1A;">Struny do ukulele</span>
+              <span style="display: block; margin-top: 4px; font-size: 13px; color: #6B6B6B;">Aquila Nylgut, Worth Brown — komplet od 30 zł</span>
+            </span>
+            <span style="flex: 0 0 auto; font-size: 15px; color: #F58F00;">↗</span>
+          </a>
+          <a href="#" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 15px 0; border-top: 1px solid #F0EEE9;">
+            <span>
+              <span style="display: block; font-size: 15px; font-weight: 500; color: #1A1A1A;">Pokrowce i tunery</span>
+              <span style="display: block; margin-top: 4px; font-size: 13px; color: #6B6B6B;">Akcesoria niezbędne na start</span>
+            </span>
+            <span style="flex: 0 0 auto; font-size: 15px; color: #F58F00;">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 760px; margin: 0 auto; padding: 52px 20px 72px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B6B;">Powiązane poradniki</div>
+    <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+      <a href="#" style="display: block; padding: 18px 20px; border: 1px solid #E8E6E1; border-radius: 8px;" style-hover="border-color: #1A1A1A;">
+        <span style="display: block; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: #B36400;">Dzieci · 8 min</span>
+        <span style="display: block; margin-top: 8px; font-size: 16px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Instrumenty muzyczne dla dzieci</span>
+      </a>
+      <a href="#" style="display: block; padding: 18px 20px; border: 1px solid #E8E6E1; border-radius: 8px;" style-hover="border-color: #1A1A1A;">
+        <span style="display: block; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: #B36400;">Używane · 10 min</span>
+        <span style="display: block; margin-top: 8px; font-size: 16px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Instrumenty muzyczne używane</span>
+      </a>
+      <a href="#" style="display: block; padding: 18px 20px; border: 1px solid #E8E6E1; border-radius: 8px;" style-hover="border-color: #1A1A1A;">
+        <span style="display: block; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: #B36400;">Akustyczne · 9 min</span>
+        <span style="display: block; margin-top: 8px; font-size: 16px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Instrumenty muzyczne akustyczne</span>
+      </a>
+    </div>
+  </section>
+
+  <footer style="background: #1A1A1A; color: #B8B8B8;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 62px 20px 0; display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 40px;">
+      <div>
+        <div style="font-size: 16px; font-weight: 700; color: #FFFFFF;">muzyczny.online</div>
+        <p style="margin: 16px 0 0; max-width: 320px; font-size: 13px; line-height: 1.7; color: #9A9A9A; text-wrap: pretty;">Poradniki i przewodniki zakupowe po instrumentach muzycznych. Serwis siostrzany sklepu muzyczny.pl.</p>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Poradniki</div>
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+          <a href="#">Dla dzieci</a>
+          <a href="#">Używane</a>
+          <a href="#">Akustyczne</a>
+          <a href="#">Profesjonalne</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Kategorie</div>
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+          <a href="#">Wszystkie poradniki</a>
+          <a href="#">Wg wieku</a>
+          <a href="#">Wg budżetu</a>
+          <a href="#">Wg poziomu</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Sklep</div>
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+          <a href="#">muzyczny.pl</a>
+          <a href="#">Kontakt</a>
+          <a href="#">O nas</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 20px;">
+      <div style="margin-top: 54px; padding: 24px 0 30px; border-top: 1px solid #2C2C2C; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; font-size: 13px; color: #6B6B6B;">
+        <span>© 2026 muzyczny.pl · Wszystkie prawa zastrzeżone</span>
+        <span style="display: flex; align-items: center; gap: 10px;"><a href="#">Polityka prywatności</a> · <a href="#">Regulamin</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+</body>
+</html>

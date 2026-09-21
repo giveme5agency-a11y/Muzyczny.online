@@ -1,4 +1,5 @@
 ---
+// LandingCard — v2 with standard + featured variants
 export interface Props {
   title: string;
   description: string;
@@ -6,11 +7,12 @@ export interface Props {
   readingTime: number;
   category: string;
   hero?: string;
+  featured?: boolean;
 }
-const { title, description, href, readingTime, category, hero } = Astro.props;
+const { title, description, href, readingTime, category, hero, featured = false } = Astro.props;
 ---
 
-<a href={href} class="card">
+<a href={href} class={featured ? 'card card-featured' : 'card'}>
   {hero && (
     <div class="card-hero" aria-hidden="true">
       <img src={hero} alt="" loading="lazy" />
@@ -21,6 +23,7 @@ const { title, description, href, readingTime, category, hero } = Astro.props;
       <span class="card-cat">{category}</span>
       <span class="card-time">{readingTime} min</span>
     </div>
+    {featured && <span class="card-badge">Najnowszy</span>}
     <h3 class="card-title">{title}</h3>
     <p class="card-desc">{description}</p>
     <span class="card-cta">
@@ -40,21 +43,23 @@ const { title, description, href, readingTime, category, hero } = Astro.props;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: border-color 0.15s, transform 0.15s var(--ease-out);
+    transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
     height: 100%;
+    color: inherit;
   }
 
   .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(26, 26, 26, 0.11);
     border-color: var(--ink);
-    transform: translateY(-2px);
+    color: inherit;
   }
 
   .card-hero {
     width: 100%;
-    aspect-ratio: 5 / 2;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: var(--ink);
-    border-bottom: 1px solid var(--line);
+    background: var(--cream-strong);
   }
 
   .card-hero img {
@@ -65,52 +70,124 @@ const { title, description, href, readingTime, category, hero } = Astro.props;
   }
 
   .card-body {
-    padding: 22px 22px 24px;
+    padding: 18px 22px 22px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    gap: 10px;
+    flex: 1;
   }
 
   .card-meta {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-    margin-bottom: 14px;
   }
 
-  .card-cat {
-    color: var(--orange-dark);
+  .card-cat { color: var(--orange); }
+  .card-time { color: var(--text-quiet); }
+
+  .card-badge {
+    align-self: flex-start;
+    font-size: 10px;
     font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--orange-dark);
+    background: var(--orange-tint);
+    padding: 4px 10px;
+    border-radius: 4px;
   }
 
   .card-title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     line-height: 1.35;
+    letter-spacing: -0.2px;
     color: var(--ink);
-    margin: 0 0 10px;
+    text-wrap: pretty;
   }
 
   .card-desc {
     font-size: 14px;
-    line-height: 1.55;
+    line-height: 1.6;
     color: var(--text-muted);
-    margin: 0 0 20px;
+    text-wrap: pretty;
     flex-grow: 1;
   }
 
   .card-cta {
+    margin-top: auto;
+    padding-top: 14px;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
   }
 
   .card:hover .card-cta { color: var(--orange-dark); }
+
+  /* ============ Featured variant ============ */
+
+  .card-featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+    gap: 0;
+  }
+
+  .card-featured .card-hero {
+    aspect-ratio: auto;
+    min-height: 300px;
+    height: 100%;
+  }
+
+  .card-featured .card-body {
+    padding: 34px 36px;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .card-featured .card-title {
+    font-size: 28px;
+    line-height: 1.18;
+    letter-spacing: -0.7px;
+    font-weight: 600;
+  }
+
+  .card-featured .card-desc {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--text-warm);
+    flex-grow: 0;
+  }
+
+  .card-featured .card-cta {
+    align-self: flex-start;
+    padding: 12px 22px;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: var(--radius);
+    font-weight: 500;
+    margin-top: 6px;
+  }
+
+  .card-featured:hover .card-cta {
+    background: var(--orange);
+    color: var(--ink);
+  }
+
+  @media (max-width: 780px) {
+    .card-featured { grid-template-columns: 1fr; }
+    .card-featured .card-hero { min-height: 200px; aspect-ratio: 16 / 9; }
+    .card-featured .card-body { padding: 22px; }
+    .card-featured .card-title { font-size: 22px; }
+    .card-featured .card-desc { font-size: 15px; }
+  }
 </style>

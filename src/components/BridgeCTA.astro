@@ -1,0 +1,107 @@
+---
+// BridgeCTA — "Kup to, o czym czytasz" bridge box at end of article
+// Lists all shop categories. No links — placeholder for future shop wiring.
+export interface Props {
+  items: Array<{ label: string; sub: string; url?: string }>;
+}
+const { items } = Astro.props;
+---
+
+<aside class="bridge" aria-label="Powiązane produkty w sklepie">
+  <div class="bridge-topbar" aria-hidden="true"></div>
+  <div class="bridge-body">
+    <div class="bridge-head">
+      <div class="bridge-title">Kup to, o czym czytasz</div>
+      <div class="bridge-source">sklep</div>
+    </div>
+    <div class="bridge-list">
+      {items.map((item) => (
+        <div class="bridge-row">
+          <span>
+            <span class="bridge-row-title">{item.label}</span>
+            <span class="bridge-row-sub">{item.sub}</span>
+          </span>
+          <span class="bridge-arrow" aria-hidden="true">↗</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</aside>
+
+<style>
+  .bridge {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 52px 0 0;
+  }
+
+  .bridge-topbar {
+    height: 3px;
+    background: var(--orange);
+  }
+
+  .bridge-body {
+    padding: 24px 26px 26px;
+  }
+
+  .bridge-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .bridge-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+  }
+
+  .bridge-source {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .bridge-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bridge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 48px;
+    padding: 15px 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .bridge-row-title {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .bridge-row-sub {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .bridge-arrow {
+    flex: 0 0 auto;
+    font-size: 15px;
+    color: var(--orange);
+  }
+</style>

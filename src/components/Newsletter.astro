@@ -1,21 +1,21 @@
 ---
-// Newsletter — mirrors the "ZAPISZ SIĘ DO NASZEGO NEWSLETTERA"
-// section from muzyczny.net but repositioned around content, not promos.
+// Newsletter — v2 style, dark bg with radial glow
 ---
 
-<section class="newsletter">
+<section class="newsletter" aria-label="Newsletter">
   <div class="wrap newsletter-inner">
-    <div class="newsletter-text">
+    <div>
       <h2>Nowy poradnik co dwa tygodnie</h2>
       <p>
-        Dostajesz krótkiego maila z jednym praktycznym poradnikiem —
-        jak wybrać instrument, na co uważać, ile realnie kosztuje.
-        Zero spamu, zero reklam.
+        Dostajesz krótkiego maila z jednym praktycznym poradnikiem — jak wybrać instrument,
+        na co uważać, ile realnie kosztuje. Zero spamu, zero reklam.
       </p>
     </div>
     <form class="newsletter-form" action="#" method="post" onsubmit="return false">
-      <input type="email" placeholder="twoj@email.pl" aria-label="Adres email" required />
-      <button type="submit" class="btn btn-primary">Zapisz mnie</button>
+      <div class="newsletter-row">
+        <input type="email" placeholder="twoj@email.pl" aria-label="Adres email" required />
+        <button type="submit">Zapisz mnie</button>
+      </div>
       <label class="newsletter-consent">
         <input type="checkbox" required />
         <span>Wyrażam zgodę na przetwarzanie moich danych zgodnie z <a href="/polityka-prywatnosci/">polityką prywatności</a>.</span>
@@ -27,83 +27,91 @@
 <style>
   .newsletter {
     background: var(--ink);
-    color: var(--white);
-    padding: 64px 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .newsletter::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 15% 30%, rgba(245, 143, 0, 0.15) 0%, transparent 40%),
-      radial-gradient(circle at 85% 70%, rgba(245, 143, 0, 0.08) 0%, transparent 40%);
-    pointer-events: none;
+    background-image:
+      radial-gradient(520px 260px at 18% 40%, rgba(245, 143, 0, 0.16), transparent 70%),
+      radial-gradient(420px 220px at 72% 80%, rgba(245, 143, 0, 0.10), transparent 70%);
   }
 
   .newsletter-inner {
-    position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 48px;
     align-items: center;
+    padding: 72px 20px 78px;
   }
 
-  .newsletter-text h2 {
-    font-size: 28px;
+  .newsletter h2 {
+    font-size: 32px;
+    line-height: 1.2;
     font-weight: 600;
-    line-height: 1.25;
-    margin: 0 0 12px;
+    letter-spacing: -0.6px;
     color: var(--white);
+    text-wrap: pretty;
   }
 
-  .newsletter-text p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #B8B8B8;
+  .newsletter p {
+    margin: 18px 0 0;
     max-width: 420px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #B8B8B8;
+    text-wrap: pretty;
   }
 
-  .newsletter-form {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 10px;
+  .newsletter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .newsletter-form input[type="email"] {
-    padding: 14px 16px;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius);
+    flex: 1;
+    min-width: 220px;
+    padding: 15px 18px;
     font-family: inherit;
+    font-size: 14px;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--ink-soft);
+    border-radius: var(--radius);
     outline: none;
     transition: border-color 0.15s;
   }
 
-  .newsletter-form input[type="email"]::placeholder { color: #6A6A6A; }
+  .newsletter-form input[type="email"]::placeholder { color: var(--text-quiet); }
   .newsletter-form input[type="email"]:focus { border-color: var(--orange); }
 
-  .newsletter-consent {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 11px;
-    color: #8A8A8A;
-    line-height: 1.5;
-    margin-top: 4px;
+  .newsletter-form button {
+    padding: 15px 24px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--orange);
+    border-radius: var(--radius);
+    transition: background 0.15s, color 0.15s;
   }
 
-  .newsletter-consent input { margin-top: 3px; }
-  .newsletter-consent a { color: var(--orange); text-decoration: underline; }
+  .newsletter-form button:hover {
+    background: var(--orange-hover);
+    color: var(--white);
+  }
+
+  .newsletter-consent {
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--text-quiet);
+  }
+
+  .newsletter-consent input { margin-top: 3px; accent-color: var(--orange); }
+  .newsletter-consent a { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
 
   @media (max-width: 780px) {
-    .newsletter { padding: 48px 0; }
-    .newsletter-inner { grid-template-columns: 1fr; gap: 24px; }
-    .newsletter-text h2 { font-size: 22px; }
+    .newsletter-inner { padding: 48px 16px; gap: 28px; }
+    .newsletter h2 { font-size: 24px; }
   }
 </style>

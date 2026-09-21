@@ -1,4 +1,5 @@
 ---
+// Footer — v2 layout, muzyczny.pl references removed
 const cols = [
   {
     title: 'Poradniki',
@@ -6,7 +7,7 @@ const cols = [
       { label: 'Dla dzieci', href: '/instrumenty-muzyczne-dla-dzieci/' },
       { label: 'Używane', href: '/instrumenty-muzyczne-uzywane/' },
       { label: 'Akustyczne', href: '/instrumenty-muzyczne-akustyczne/' },
-      { label: 'Profesjonalne', href: '/instrumenty-muzyczne-profesjonalne/' },
+      { label: 'Ukulele', href: '/jak-wybrac-pierwsze-ukulele/' },
     ],
   },
   {
@@ -19,9 +20,8 @@ const cols = [
     ],
   },
   {
-    title: 'Sklep',
+    title: 'Serwis',
     links: [
-      { label: 'muzyczny.pl', href: 'https://muzyczny.pl' },
       { label: 'Kontakt', href: '/kontakt/' },
       { label: 'O nas', href: '/o-nas/' },
     ],
@@ -32,32 +32,27 @@ const cols = [
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo">
-        <span>muzyczny.online</span>
-      </div>
+      <div class="footer-logo">muzyczny.online</div>
       <p class="footer-tag">
         Poradniki i przewodniki zakupowe po instrumentach muzycznych.
-        Serwis siostrzany sklepu muzyczny.pl.
       </p>
     </div>
 
-    <div class="footer-cols">
-      {cols.map((col) => (
-        <div class="footer-col">
-          <h3>{col.title}</h3>
-          <ul>
-            {col.links.map((link) => (
-              <li><a href={link.href}>{link.label}</a></li>
-            ))}
-          </ul>
+    {cols.map((col) => (
+      <div class="footer-col">
+        <div class="footer-col-title">{col.title}</div>
+        <div class="footer-col-links">
+          {col.links.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 
-  <div class="footer-legal">
-    <div class="wrap footer-legal-inner">
-      <span>© {new Date().getFullYear()} muzyczny.pl · Wszystkie prawa zastrzeżone</span>
+  <div class="wrap">
+    <div class="footer-legal">
+      <span>© {new Date().getFullYear()} muzyczny.online · Wszystkie prawa zastrzeżone</span>
       <span>
         <a href="/polityka-prywatnosci/">Polityka prywatności</a>
         <span class="sep">·</span>
@@ -70,78 +65,68 @@ const cols = [
 <style>
   .site-footer {
     background: var(--ink);
-    color: #C9C9C9;
+    color: #B8B8B8;
     margin-top: 80px;
   }
 
   .footer-inner {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    padding: 56px 20px 40px;
+    grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    padding: 62px 20px 0;
   }
 
   .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--white);
+    font-size: 16px;
     font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 12px;
+    color: var(--white);
   }
 
   .footer-tag {
-    font-size: 13px;
-    line-height: 1.6;
-    color: #8A8A8A;
+    margin-top: 16px;
     max-width: 320px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-quiet);
+    text-wrap: pretty;
   }
 
-  .footer-cols {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-
-  .footer-col h3 {
+  .footer-col-title {
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--white);
-    margin-bottom: 16px;
     font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
   }
 
-  .footer-col ul {
-    list-style: none;
-    padding: 0;
+  .footer-col-links {
+    margin-top: 18px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-col a {
+    gap: 14px;
     font-size: 14px;
-    color: #B0B0B0;
-    transition: color 0.15s;
   }
 
-  .footer-col a:hover { color: var(--orange); }
+  .footer-col-links a {
+    color: #B8B8B8;
+  }
+
+  .footer-col-links a:hover { color: var(--orange); }
 
   .footer-legal {
-    border-top: 1px solid #2E2E2E;
-  }
-
-  .footer-legal-inner {
+    margin-top: 54px;
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--ink-soft);
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
     justify-content: space-between;
-    padding: 18px 20px;
-    font-size: 12px;
-    color: #8A8A8A;
+    font-size: 13px;
+    color: var(--text-muted);
   }
 
-  .footer-legal a { color: #8A8A8A; }
+  .footer-legal a { color: var(--text-muted); }
   .footer-legal a:hover { color: var(--orange); }
   .sep { margin: 0 8px; opacity: 0.5; }
 
@@ -149,16 +134,7 @@ const cols = [
     .footer-inner {
       grid-template-columns: 1fr;
       gap: 32px;
-      padding: 40px 16px 24px;
-    }
-    .footer-cols {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-    .footer-legal-inner {
-      flex-direction: column;
-      gap: 10px;
-      align-items: flex-start;
+      padding: 40px 16px 0;
     }
   }
 </style>

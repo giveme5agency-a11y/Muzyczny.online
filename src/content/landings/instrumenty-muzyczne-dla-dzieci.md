@@ -1,31 +1,40 @@
 ---
-title: 'Instrumenty muzyczne dla dzieci'
-h1: "Instrumenty muzyczne dla dzieci — jak wybrać pierwszy instrument"
-description: 'Praktyczny przewodnik po wyborze pierwszego instrumentu dla dziecka. Wiek, rozmiar, budżet i najczęstsze błędy rodziców — wszystko oparte na doświadczeniu z realnej sprzedaży.'
-keyword: 'instrumenty muzyczne dla dzieci'
-category: 'dzieci'
+title: Instrumenty muzyczne dla dzieci
+h1: Instrumenty muzyczne dla dzieci — jak wybrać pierwszy instrument
+description: Praktyczny przewodnik po wyborze pierwszego instrumentu dla dziecka. Wiek, rozmiar, budżet i najczęstsze błędy rodziców — wszystko oparte na doświadczeniu z realnej sprzedaży.
+keyword: instrumenty muzyczne dla dzieci
+category: dzieci
 readingTime: 8
-hero: '/heroes/dzieci.svg'
+hero: /heroes/dzieci.jpg
 updated: 2026-09-20
 faq:
-  - q: 'Od jakiego wieku dziecko może zacząć naukę gry?'
-    a: 'Umuzykalnienie można zaczynać już od 3-4 lat (rytmika, śpiew, proste instrumenty perkusyjne). Naukę gry na konkretnym instrumencie — realnie od 5-6 lat na keyboardzie, od 6-7 lat na gitarze, od 7-8 lat na pianinie. Skrzypce można zaczynać wcześniej (od 4 lat, rozmiar 1/16), bo instrument dopasowuje się do wielkości dziecka.'
-  - q: 'Czy warto kupować używany instrument dla dziecka?'
-    a: 'Tak, ale z dwoma zastrzeżeniami. Po pierwsze — nie kupujcie na ślepo z OLX bez oględzin przez kogoś, kto zna instrument. Po drugie — akustyczne pianina to loteria (mogą wymagać drogiego strojenia i regulacji), lepiej kupić używany keyboard średniej klasy niż akustyk niepewnej kondycji.'
-  - q: 'Jaki instrument jest najłatwiejszy dla dziecka?'
-    a: 'Zależy, co znaczy „łatwy". Najszybszy efekt (pierwsza melodia w tydzień) — keyboard albo ukulele. Najmniej frustrujący technicznie na starcie — keyboard z podświetlanymi klawiszami. Najbardziej naturalny fizycznie — perkusja (choć tu problem: hałas). Nie ma jednego zwycięzcy, wybór powinien iść za dzieckiem, nie za wygodą rodzica.'
-  - q: 'Ile kosztuje dobry instrument dla początkującego?'
-    a: 'Realny budżet: 400-800 zł na keyboard, 500-900 zł na gitarę akustyczną w rozmiarze 3/4, 600-1200 zł na ukulele (koncertowe lub tenorowe), 1500-2500 zł na przyzwoite pianino cyfrowe z 88 klawiszami ważonymi. Poniżej tych progów kupujecie w zasadzie zabawkę, która wychowa złe nawyki techniczne.'
+- q: Od jakiego wieku dziecko może zacząć naukę gry?
+  a: Umuzykalnienie można zaczynać już od 3-4 lat (rytmika, śpiew, proste instrumenty perkusyjne). Naukę gry na konkretnym instrumencie — realnie od 5-6 lat na keyboardzie, od 6-7 lat na gitarze, od 7-8
+    lat na pianinie. Skrzypce można zaczynać wcześniej (od 4 lat, rozmiar 1/16), bo instrument dopasowuje się do wielkości dziecka.
+- q: Czy warto kupować używany instrument dla dziecka?
+  a: Tak, ale z dwoma zastrzeżeniami. Po pierwsze — nie kupujcie na ślepo z OLX bez oględzin przez kogoś, kto zna instrument. Po drugie — akustyczne pianina to loteria (mogą wymagać drogiego strojenia i
+    regulacji), lepiej kupić używany keyboard średniej klasy niż akustyk niepewnej kondycji.
+- q: Jaki instrument jest najłatwiejszy dla dziecka?
+  a: 'Zależy, co znaczy „łatwy". Najszybszy efekt (pierwsza melodia w tydzień) — keyboard albo ukulele. Najmniej frustrujący technicznie na starcie — keyboard z podświetlanymi klawiszami. Najbardziej naturalny
+    fizycznie — perkusja (choć tu problem: hałas). Nie ma jednego zwycięzcy, wybór powinien iść za dzieckiem, nie za wygodą rodzica.'
+- q: Ile kosztuje dobry instrument dla początkującego?
+  a: 'Realny budżet: 400-800 zł na keyboard, 500-900 zł na gitarę akustyczną w rozmiarze 3/4, 600-1200 zł na ukulele (koncertowe lub tenorowe), 1500-2500 zł na przyzwoite pianino cyfrowe z 88 klawiszami
+    ważonymi. Poniżej tych progów kupujecie w zasadzie zabawkę, która wychowa złe nawyki techniczne.'
 ctaCategories:
-  - label: 'Zestawy instrumentów dla dzieci'
-    sub: 'Skrzypce 1/4 i 1/2, gitary 3/4, keyboardy dla najmłodszych'
-    url: 'https://muzyczny.pl/kategoria/dzieci/'
-  - label: 'Pianina cyfrowe dla początkujących'
-    sub: 'Modele 61 i 76 klawiszy z półważoną klawiaturą'
-    url: 'https://muzyczny.pl/kategoria/pianina-cyfrowe-dzieci/'
+- label: Zestawy instrumentów dla dzieci
+  sub: Skrzypce 1/4 i 1/2, gitary 3/4, keyboardy dla najmłodszych
+- label: Pianina cyfrowe dla początkujących
+  sub: Modele 61 i 76 klawiszy z półważoną klawiaturą
+lead: 'Dla dziecka w wieku 4–6 lat najlepsze są instrumenty perkusyjne edukacyjne albo keyboard 32–49 klawiszy. Od 6–8 lat: gitara klasyczna 3/4, keyboard 61-klawiszowy, skrzypce 1/2. Realny budżet startowy:
+  400–900 zł.'
+keyTakeaways:
+- Dobierz **rozmiar do wzrostu** dziecka — nie kupuj „na wyrost".
+- Budżet 300 zł to zwykle za mało — instrument źle się stroi i zniechęca.
+- Pianino **cyfrowe wygrywa** z akustycznym w mieszkaniu (słuchawki, zero strojenia).
+- Gitara **klasyczna** przed elektryczną — nylonowe struny nie ranią palców.
 ---
 
-Wybór pierwszego instrumentu dla dziecka to jedna z tych decyzji, w której łatwo popełnić błąd. Za mały, za duży, za drogi, za trudny — każdy z tych błędów kończy się instrumentem w kącie po dwóch miesiącach. W tym poradniku pokazujemy, jak dopasować instrument do wieku, temperamentu i możliwości domowych — na bazie doświadczenia z tysięcy sprzedaży w sklepach muzyczny.pl i Riff.
+Wybór pierwszego instrumentu dla dziecka to jedna z tych decyzji, w której łatwo popełnić błąd. Za mały, za duży, za drogi, za trudny — każdy z tych błędów kończy się instrumentem w kącie po dwóch miesiącach. W tym poradniku pokazujemy, jak dopasować instrument do wieku, temperamentu i możliwości domowych — na bazie doświadczenia z tysięcy sprzedaży w naszych sklepach.
 
 ## Jaki instrument dla jakiego wieku
 

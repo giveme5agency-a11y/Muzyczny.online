@@ -1,0 +1,68 @@
+---
+// TOC — generated from article headings (H2 only)
+export interface Heading { depth: number; slug: string; text: string; }
+export interface Props {
+  headings: Heading[];
+  extraItems?: Array<{ slug: string; text: string }>; // for wnioski + faq anchors
+}
+const { headings, extraItems = [] } = Astro.props;
+const h2 = headings.filter((h) => h.depth === 2);
+const items = [...h2.map((h) => ({ slug: h.slug, text: h.text })), ...extraItems];
+if (items.length === 0) return Astro.slots.render('default');
+---
+
+<nav aria-label="Spis treści" class="toc">
+  <div class="toc-label">Spis treści</div>
+  <div class="toc-list">
+    {items.map((item, i) => (
+      <a href={`#${item.slug}`}>
+        <span class="toc-num">{String(i + 1).padStart(2, '0')}</span>
+        <span>{item.text}</span>
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .toc {
+    margin: 34px 0 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+
+  .toc-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .toc-list {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px 28px;
+    font-size: 14px;
+  }
+
+  .toc-list a {
+    display: flex;
+    gap: 10px;
+    color: var(--text);
+    line-height: 1.4;
+    padding: 4px 0;
+  }
+
+  .toc-list a:hover {
+    color: var(--orange-dark);
+  }
+
+  .toc-num {
+    color: var(--line-quiet);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+</style>

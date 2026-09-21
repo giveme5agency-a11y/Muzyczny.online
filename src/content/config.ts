@@ -12,6 +12,8 @@ const landings = defineCollection({
     updated: z.date(),
     published: z.boolean().default(true),
     hero: z.string().optional(),
+    lead: z.string().optional(),
+    keyTakeaways: z.array(z.string()).default([]),
     faq: z.array(
       z.object({
         q: z.string(),
@@ -22,7 +24,7 @@ const landings = defineCollection({
       z.object({
         label: z.string(),
         sub: z.string(),
-        url: z.string(),
+        url: z.string().optional(),
       })
     ).default([]),
   }),

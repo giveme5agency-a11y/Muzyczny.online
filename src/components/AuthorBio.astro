@@ -1,0 +1,51 @@
+---
+// Compact author bio card below H1
+---
+
+<div class="author-bio">
+  <div class="author-avatar placeholder-pattern" aria-hidden="true"></div>
+  <div class="author-text">
+    <strong>Redakcja muzyczny.online</strong> — 35 lat sprzedaży instrumentów, tysiące rozmów z rodzicami i początkującymi. <a href="/o-nas/">O nas</a>
+  </div>
+</div>
+
+<style>
+  .author-bio {
+    margin: 30px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    padding: 16px 18px;
+    background: var(--cream);
+    border-radius: 8px;
+  }
+
+  .author-avatar {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .author-text {
+    flex: 1 1 200px;
+    min-width: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-warm);
+  }
+
+  .author-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .author-text a {
+    color: var(--orange-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .author-text a:hover { color: var(--orange); }
+</style>

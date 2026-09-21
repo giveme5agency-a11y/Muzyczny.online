@@ -1,6 +1,11 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import ShopCTA from '../components/ShopCTA.astro';
+import BridgeCTA from '../components/BridgeCTA.astro';
+import AuthorBio from '../components/AuthorBio.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import Faq from '../components/Faq.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
 
 export interface Props {
   frontmatter: {
@@ -12,34 +17,41 @@ export interface Props {
     readingTime: number;
     updated: Date;
     hero?: string;
+    lead?: string;
     faq?: Array<{ q: string; a: string }>;
-    ctaCategories?: Array<{ label: string; sub: string; url: string }>;
+    ctaCategories?: Array<{ label: string; sub: string; url?: string }>;
+    keyTakeaways?: string[];
   };
   slug: string;
+  headings: Array<{ depth: number; slug: string; text: string }>;
+  related?: Array<{ title: string; href: string; category: string; readingTime: number }>;
 }
 
-const { frontmatter, slug } = Astro.props;
+const { frontmatter, slug, headings, related = [] } = Astro.props;
 const {
   title,
   h1 = title,
   description,
-  keyword,
   category,
   readingTime,
   updated,
   hero,
+  lead,
   faq = [],
   ctaCategories = [],
+  keyTakeaways = [],
 } = frontmatter;
 
-const updatedFormatted = updated.toLocaleDateString('pl-PL', {
-  year: 'numeric',
-  month: 'long',
-});
-
+const updatedISO = updated.toISOString().split('T')[0];
+const updatedFormatted = updated.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long' });
 const canonical = `https://muzyczny.online/${slug}/`;
 
-// FAQ schema
+// Build TOC extra items (Kluczowe wnioski + FAQ get anchors too)
+const tocExtras = [];
+if (keyTakeaways.length > 0) tocExtras.push({ slug: 'wnioski', text: 'Kluczowe wnioski' });
+if (faq.length > 0) tocExtras.push({ slug: 'faq', text: 'Najczęstsze pytania' });
+
+// Schemas
 const faqSchema = faq.length > 0 ? {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -50,7 +62,6 @@ const faqSchema = faq.length > 0 ? {
   })),
 } : null;
 
-// Article schema
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -58,264 +69,296 @@ const articleSchema = {
   description,
   datePublished: updated.toISOString(),
   dateModified: updated.toISOString(),
-  author: { '@type': 'Organization', name: 'muzyczny.pl' },
+  author: { '@type': 'Organization', name: 'muzyczny.online' },
   publisher: {
     '@type': 'Organization',
-    name: 'muzyczny.pl',
-    logo: { '@type': 'ImageObject', url: 'https://muzyczny.online/logo.png' },
+    name: 'muzyczny.online',
+    logo: { '@type': 'ImageObject', url: 'https://muzyczny.online/favicon.svg' },
   },
   mainEntityOfPage: canonical,
+  ...(hero && { image: `https://muzyczny.online${hero}` }),
 };
+
+const primaryCta = ctaCategories[0];
 ---
 
-<BaseLayout title={`${title} — muzyczny.online`} description={description} canonical={canonical}>
-  <article class="landing">
-    {hero && (
-      <div class="landing-hero" aria-hidden="true">
-        <img src={hero} alt="" loading="eager" fetchpriority="high" />
-      </div>
-    )}
-    <nav class="breadcrumbs wrap-narrow" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span aria-hidden="true">›</span>
-      <a href="/poradniki/">Poradniki</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">{title}</span>
-    </nav>
+<BaseLayout title={`${title} — muzyczny.online`} description={description} canonical={canonical} ogImage={hero}>
 
-    <header class="landing-header wrap-narrow">
-      <div class="landing-cat">{category}</div>
-      <h1>{h1}</h1>
-      <div class="landing-meta">
-        <span>Aktualizacja: {updatedFormatted}</span>
-        <span class="dot" aria-hidden="true">•</span>
-        <span>{readingTime} min czytania</span>
-        <span class="dot" aria-hidden="true">•</span>
-        <span>Zespół muzyczny.pl</span>
+  <nav aria-label="Breadcrumbs" class="crumbs">
+    <div class="crumbs-inner">
+      <a href="/">Strona główna</a>
+      <span aria-hidden="true">/</span>
+      <a href="/poradniki/">Poradniki</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{title}</span>
+    </div>
+  </nav>
+
+  <article>
+    <div class="wrap-narrow article-head">
+      <div class="article-meta">
+        <span class="article-cat">{category}</span>
+        <span class="article-sep">|</span>
+        <span class="article-time">{readingTime} min czytania</span>
+        <span class="article-sep">|</span>
+        <span>Aktualizacja: <time datetime={updatedISO}>{updatedFormatted}</time></span>
       </div>
-    </header>
+
+      <h1>{h1}</h1>
+
+      {lead && <p class="article-lead">{lead}</p>}
+
+      <AuthorBio />
+
+      <TableOfContents headings={headings} extraItems={tocExtras} />
+    </div>
 
     <div class="wrap-narrow prose">
       <slot />
 
-      {ctaCategories.length > 0 && (
-        <div class="cta-block">
-          <h2>Sprawdź w sklepie</h2>
-          {ctaCategories.map((cta) => (
-            <ShopCTA title={cta.label} sub={cta.sub} url={cta.url} />
-          ))}
+      {primaryCta && (
+        <ShopCTA title={primaryCta.label} sub={primaryCta.sub} />
+      )}
+
+      {keyTakeaways.length > 0 && (
+        <div id="wnioski" class="takeaways">
+          <h2>Kluczowe wnioski</h2>
+          <ul>
+            {keyTakeaways.map((item) => (
+              <li set:html={item} />
+            ))}
+          </ul>
         </div>
       )}
-
-      {faq.length > 0 && (
-        <section class="faq">
-          <h2>Najczęściej zadawane pytania</h2>
-          {faq.map((item) => (
-            <details class="faq-item">
-              <summary>{item.q}</summary>
-              <div class="faq-answer">{item.a}</div>
-            </details>
-          ))}
-        </section>
-      )}
-
-      <div class="landing-footer-cta">
-        <div class="lfc-title">Wybraliście już instrument?</div>
-        <div class="lfc-sub">Pełna oferta w sklepie muzyczny.pl</div>
-        <a href="https://muzyczny.pl" class="btn btn-ink" rel="noopener">
-          Przejdź do sklepu
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
     </div>
   </article>
+
+  {faq.length > 0 && <Faq items={faq} />}
+
+  {ctaCategories.length > 0 && (
+    <div class="wrap-narrow bridge-wrap">
+      <BridgeCTA items={ctaCategories} />
+    </div>
+  )}
+
+  {related.length > 0 && <RelatedPosts posts={related} />}
 
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 </BaseLayout>
 
 <style>
-  .landing {
-    padding: 0 0 64px;
-  }
-
-  .landing-hero {
-    width: 100%;
-    max-height: 420px;
-    overflow: hidden;
-    background: var(--ink);
-    margin-bottom: 40px;
+  /* ============ Breadcrumbs ============ */
+  .crumbs {
     border-bottom: 1px solid var(--line);
   }
-
-  .landing-hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .breadcrumbs {
+  .crumbs-inner {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
     font-size: 12px;
     color: var(--text-muted);
-    margin-bottom: 24px;
-    margin-top: 32px;
+  }
+  .crumbs-inner a { color: var(--text-muted); }
+  .crumbs-inner a:hover { color: var(--orange-dark); }
+  .crumbs-inner > span:not([aria-current]) { color: var(--line-quiet); }
+  .crumbs-inner [aria-current] { color: var(--text-quiet); }
+
+  /* ============ Article head ============ */
+  .article-head {
+    padding-top: 46px;
+  }
+
+  .article-meta {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
     align-items: center;
-  }
-
-  .landing-hero + .breadcrumbs,
-  .landing-hero + * .breadcrumbs {
-    margin-top: 0;
-  }
-
-  .breadcrumbs a {
-    color: var(--text-muted);
-    transition: color 0.15s;
-  }
-
-  .breadcrumbs a:hover { color: var(--orange-dark); }
-
-  .breadcrumbs span[aria-current] { color: var(--ink); font-weight: 500; }
-
-  .landing-header {
-    margin-bottom: 32px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .landing-cat {
-    display: inline-block;
+    gap: 12px;
     font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--orange-dark);
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-
-  .landing-header h1 {
-    font-size: 34px;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin: 0 0 16px;
-  }
-
-  .landing-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-
-  .landing-meta .dot { opacity: 0.4; }
-
-  .cta-block {
-    background: var(--cream);
-    padding: 24px;
-    border-radius: var(--radius-lg);
-    margin: 48px 0;
-  }
-
-  .cta-block h2 {
-    font-family: var(--font-ui);
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--ink);
-    margin: 0 0 12px;
-  }
-
-  .cta-block :global(.shop-cta) {
-    margin: 8px 0;
-    background: var(--white);
-  }
-
-  .faq {
-    margin-top: 56px;
-    padding-top: 40px;
-    border-top: 1px solid var(--line);
-  }
-
-  .faq h2 {
-    font-family: var(--font-ui);
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--ink);
-    margin: 0 0 20px;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid var(--line);
-    padding: 4px 0;
-  }
-
-  .faq-item summary {
-    padding: 16px 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
     font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+  .article-cat { color: var(--orange-dark); }
+  .article-time, .article-meta > span { color: var(--text-quiet); }
+  .article-cat { color: var(--orange-dark); }
+  .article-sep { color: var(--line); }
+
+  .article-head h1 {
+    margin: 16px 0 0;
+    font-size: 40px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -1.1px;
     color: var(--ink);
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-wrap: pretty;
   }
 
-  .faq-item summary::-webkit-details-marker { display: none; }
-
-  .faq-item summary::after {
-    content: '+';
-    font-weight: 400;
-    font-size: 22px;
-    color: var(--text-muted);
-    transition: transform 0.2s;
+  .article-lead {
+    margin: 22px 0 0;
+    font-family: var(--font-serif);
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 600;
+    color: var(--ink);
+    text-wrap: pretty;
   }
 
-  .faq-item[open] summary::after {
-    content: '−';
+  /* ============ Prose ============ */
+  .prose {
+    margin-top: 40px;
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  .prose :global(p) {
+    margin: 0 0 18px;
+    text-wrap: pretty;
+  }
+
+  .prose :global(strong) {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .prose :global(a) {
     color: var(--orange-dark);
+    border-bottom: 1px solid var(--orange-tint);
+    transition: border-color 0.15s;
   }
 
-  .faq-answer {
+  .prose :global(a:hover) { border-bottom-color: var(--orange); }
+
+  .prose :global(h2) {
+    font-family: var(--font-ui);
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin: 52px 0 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 80px;
+    text-wrap: pretty;
+  }
+
+  .prose :global(h3) {
+    font-family: var(--font-ui);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 32px 0 12px;
+    scroll-margin-top: 80px;
+  }
+
+  .prose :global(ul), .prose :global(ol) {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  .prose :global(li) { margin-bottom: 8px; }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--orange);
+    padding: 4px 0 4px 20px;
+    margin: 24px 0;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* Tables — wrap in figure via markdown or use raw table */
+  .prose :global(table) {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-family: var(--font-ui);
+    font-size: 14px;
+  }
+
+  .prose :global(.table-wrap) {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin: 26px 0 8px;
+  }
+
+  .prose :global(figure) {
+    margin: 26px 0 30px;
+  }
+
+  .prose :global(figcaption) {
+    margin-top: 10px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  .prose :global(th), .prose :global(td) {
+    padding: 13px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .prose :global(th) {
+    background: var(--cream);
+    border-bottom-color: var(--line);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ============ Kluczowe wnioski ============ */
+  .takeaways {
+    margin: 44px 0 0;
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 26px 28px;
+    scroll-margin-top: 80px;
+  }
+
+  .takeaways h2 {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    border: none;
+    padding: 0;
+  }
+
+  .takeaways ul {
+    margin: 14px 0 0;
+    padding-left: 22px;
     font-family: var(--font-serif);
     font-size: 16px;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    padding: 0 0 20px;
+    line-height: 1.6;
   }
 
-  .landing-footer-cta {
-    margin-top: 56px;
-    padding: 32px;
-    text-align: center;
-    background: var(--cream);
-    border-radius: var(--radius-lg);
-  }
+  .takeaways li { margin-bottom: 8px; }
+  .takeaways li:last-child { margin-bottom: 0; }
+  .takeaways :global(strong) { font-weight: 600; color: var(--ink); }
 
-  .lfc-title {
-    font-family: var(--font-ui);
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .lfc-sub {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
+  /* ============ Bridge wrap ============ */
+  .bridge-wrap {
+    padding-top: 0;
   }
 
   @media (max-width: 780px) {
-    .landing-header h1 { font-size: 26px; }
-    .landing-meta { flex-wrap: wrap; gap: 6px 10px; }
+    .article-head { padding-top: 32px; }
+    .article-head h1 { font-size: 30px; letter-spacing: -0.6px; }
+    .article-lead { font-size: 18px; }
+    .prose { font-size: 16px; }
+    .prose :global(h2) { font-size: 22px; margin-top: 40px; }
+    .prose :global(h3) { font-size: 17px; }
   }
 </style>

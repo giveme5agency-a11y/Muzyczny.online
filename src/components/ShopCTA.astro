@@ -1,84 +1,103 @@
 ---
+// ShopCTA — dark variant, inline in article
+// Note: url currently disabled (no navigation) per user request until shop is connected
 export interface Props {
   title: string;
   sub: string;
-  url: string;
+  eyebrow?: string;
 }
-const { title, sub, url } = Astro.props;
+const { title, sub, eyebrow = 'Sklep' } = Astro.props;
 ---
 
-<a href={url} class="shop-cta" rel="noopener">
+<div class="shop-cta">
+  <div class="shop-cta-thumb placeholder-pattern-dark" aria-hidden="true"></div>
   <div class="shop-cta-body">
+    <div class="shop-cta-eyebrow">{eyebrow}</div>
     <div class="shop-cta-title">{title}</div>
     <div class="shop-cta-sub">{sub}</div>
   </div>
-  <div class="shop-cta-action">
+  <span class="shop-cta-action" aria-label={`Zobacz w sklepie: ${title}`}>
     Zobacz w sklepie
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12h14M13 5l7 7-7 7"/>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17L17 7M17 7H8M17 7v9"/>
     </svg>
-  </div>
-</a>
+  </span>
+</div>
 
 <style>
   .shop-cta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    background: var(--cream);
-    border-left: 4px solid var(--orange);
-    border-radius: var(--radius);
-    padding: 18px 22px;
-    margin: 32px 0;
-    color: var(--ink);
-    transition: background 0.15s;
+    gap: 22px;
+    background: var(--ink);
+    border-radius: var(--radius-lg);
+    padding: 26px 28px;
+    margin: 36px 0;
     font-family: var(--font-ui);
+    color: var(--white);
   }
 
-  .shop-cta:hover {
-    background: var(--cream-strong);
+  .shop-cta-thumb {
+    flex: 0 0 auto;
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+  }
+
+  .placeholder-pattern-dark {
+    background-color: var(--ink-soft);
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0 8px, transparent 8px 16px);
+  }
+
+  .shop-cta-body {
+    flex: 1 1 220px;
+    min-width: 0;
+  }
+
+  .shop-cta-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
   }
 
   .shop-cta-title {
-    font-size: 15px;
+    margin-top: 10px;
+    font-size: 19px;
     font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 2px;
+    letter-spacing: -0.3px;
+    color: var(--white);
   }
 
   .shop-cta-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.4;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #B8B8B8;
+    text-wrap: pretty;
   }
 
   .shop-cta-action {
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    white-space: nowrap;
-    padding: 8px 14px;
-    background: var(--white);
-    border: 1px solid var(--line);
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 22px;
+    font-size: 14px;
+    font-weight: 600;
     border-radius: var(--radius);
-    flex-shrink: 0;
-  }
-
-  .shop-cta:hover .shop-cta-action {
     background: var(--orange);
-    border-color: var(--orange);
+    color: var(--ink);
+    cursor: default;
   }
 
   @media (max-width: 600px) {
-    .shop-cta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .shop-cta-action { align-self: stretch; justify-content: center; }
+    .shop-cta { padding: 22px; gap: 16px; }
+    .shop-cta-thumb { width: 64px; height: 64px; }
+    .shop-cta-body { flex-basis: 100%; order: 2; }
+    .shop-cta-action { align-self: stretch; justify-content: center; order: 3; }
   }
 </style>

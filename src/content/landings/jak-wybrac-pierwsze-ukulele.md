@@ -1,35 +1,44 @@
 ---
-title: 'Jak wybrać pierwsze ukulele'
-h1: 'Jak wybrać pierwsze ukulele — rozmiary, brzmienia i marki dla początkujących'
-description: 'Przewodnik po wyborze pierwszego ukulele. Rozmiary (sopranowe, koncertowe, tenorowe, barytonowe), realne widełki cenowe, sprawdzone marki i akcesoria, które warto kupić od razu.'
-keyword: 'jak wybrać pierwsze ukulele'
-category: 'ukulele'
+title: Jak wybrać pierwsze ukulele
+h1: Jak wybrać pierwsze ukulele — rozmiary, brzmienia i marki dla początkujących
+description: Przewodnik po wyborze pierwszego ukulele. Rozmiary (sopranowe, koncertowe, tenorowe, barytonowe), realne widełki cenowe, sprawdzone marki i akcesoria, które warto kupić od razu.
+keyword: jak wybrać pierwsze ukulele
+category: ukulele
 readingTime: 9
-hero: '/heroes/ukulele.svg'
+hero: /heroes/ukulele.jpg
 updated: 2026-09-20
 faq:
-  - q: 'Czy ukulele jest łatwiejsze od gitary?'
-    a: 'Tak. Ukulele ma 4 struny zamiast 6, miękkie struny nylonowe i krótszą menzurę, więc dociskanie strun jest łatwe i bezbolesne. Pierwsze trzy chwyty można opanować w jeden wieczór, a pierwszą piosenkę zagrać po kilku dniach. To najłatwiejszy instrument strunowy na start.'
-  - q: 'Jakie ukulele kupić dziecku 7-letniemu?'
-    a: 'Ukulele sopranowe z dobrymi strunami (Aquila), w cenie 200–400 zł — Flight NUS310 albo Mahalo MK1. Sopranowe jest najmniejsze i najlżejsze, dobrze pasuje do małych dłoni dziecka, a niska cena nie boli, gdyby zainteresowanie minęło.'
-  - q: 'Ile kosztuje dobre ukulele na start?'
-    a: 'Sensowny próg to 250–500 zł. W tym przedziale jakość brzmienia jest już wartościowa i instrument nie zniechęci do nauki. Modele warte uwagi: Flight NUS310 (ok. 300 zł), Kala KA-15S (ok. 350 zł), Fender Venice (ok. 450 zł). Poniżej 150 zł to zwykle zabawki o słabym brzmieniu.'
-  - q: 'Które ukulele wybrać – sopranowe czy koncertowe?'
-    a: 'Sopranowe ma klasyczne, jasne brzmienie ukulele i jest najtańsze. Dobre dla dziecka i osoby z mniejszymi dłońmi. Koncertowe jest nieco większe, głośniejsze i wygodniejsze dla dorosłego (więcej miejsca między progami). Dla dorosłego początkującego koncertowe jest najczęściej polecanym wyborem.'
-  - q: 'Czy warto wymienić struny w nowym ukulele?'
-    a: 'Tak, w tańszych modelach. Fabryczne struny w ukulele do 300 zł są często słabej jakości i wpływają na brzmienie oraz strój. Wymiana na Aquila Nylgut albo Worth Brown (koszt ok. 40 zł) potrafi diametralnie poprawić brzmienie taniego instrumentu.'
-  - q: 'Jaki jest strój ukulele?'
-    a: 'Standardowy strój ukulele sopranowego, koncertowego i tenorowego to G-C-E-A (od najgrubszej do najcieńszej struny). Ukulele barytonowe stroi się inaczej: D-G-B-E, czyli jak cztery najwyższe struny gitary. Najłatwiejszy wybór dla osób grających już na gitarze.'
+- q: Czy ukulele jest łatwiejsze od gitary?
+  a: Tak. Ukulele ma 4 struny zamiast 6, miękkie struny nylonowe i krótszą menzurę, więc dociskanie strun jest łatwe i bezbolesne. Pierwsze trzy chwyty można opanować w jeden wieczór, a pierwszą piosenkę
+    zagrać po kilku dniach. To najłatwiejszy instrument strunowy na start.
+- q: Jakie ukulele kupić dziecku 7-letniemu?
+  a: Ukulele sopranowe z dobrymi strunami (Aquila), w cenie 200–400 zł — Flight NUS310 albo Mahalo MK1. Sopranowe jest najmniejsze i najlżejsze, dobrze pasuje do małych dłoni dziecka, a niska cena nie boli,
+    gdyby zainteresowanie minęło.
+- q: Ile kosztuje dobre ukulele na start?
+  a: 'Sensowny próg to 250–500 zł. W tym przedziale jakość brzmienia jest już wartościowa i instrument nie zniechęci do nauki. Modele warte uwagi: Flight NUS310 (ok. 300 zł), Kala KA-15S (ok. 350 zł), Fender
+    Venice (ok. 450 zł). Poniżej 150 zł to zwykle zabawki o słabym brzmieniu.'
+- q: Które ukulele wybrać – sopranowe czy koncertowe?
+  a: Sopranowe ma klasyczne, jasne brzmienie ukulele i jest najtańsze. Dobre dla dziecka i osoby z mniejszymi dłońmi. Koncertowe jest nieco większe, głośniejsze i wygodniejsze dla dorosłego (więcej miejsca
+    między progami). Dla dorosłego początkującego koncertowe jest najczęściej polecanym wyborem.
+- q: Czy warto wymienić struny w nowym ukulele?
+  a: Tak, w tańszych modelach. Fabryczne struny w ukulele do 300 zł są często słabej jakości i wpływają na brzmienie oraz strój. Wymiana na Aquila Nylgut albo Worth Brown (koszt ok. 40 zł) potrafi diametralnie
+    poprawić brzmienie taniego instrumentu.
+- q: Jaki jest strój ukulele?
+  a: 'Standardowy strój ukulele sopranowego, koncertowego i tenorowego to G-C-E-A (od najgrubszej do najcieńszej struny). Ukulele barytonowe stroi się inaczej: D-G-B-E, czyli jak cztery najwyższe struny
+    gitary. Najłatwiejszy wybór dla osób grających już na gitarze.'
 ctaCategories:
-  - label: 'Ukulele w sklepie'
-    sub: 'Sopranowe, koncertowe, tenorowe, barytonowe — od 150 zł'
-    url: 'https://muzyczny.pl/kategoria/ukulele/'
-  - label: 'Struny do ukulele'
-    sub: 'Aquila Nylgut, Worth Brown — komplet od 30 zł'
-    url: 'https://muzyczny.pl/kategoria/struny-do-ukulele/'
-  - label: 'Pokrowce i tunery'
-    sub: 'Akcesoria niezbędne na start'
-    url: 'https://muzyczny.pl/kategoria/akcesoria-ukulele/'
+- label: Ukulele w sklepie
+  sub: Sopranowe, koncertowe, tenorowe, barytonowe — od 150 zł
+- label: Struny do ukulele
+  sub: Aquila Nylgut, Worth Brown — komplet od 30 zł
+- label: Pokrowce i tunery
+  sub: Akcesoria niezbędne na start
+lead: Dla dorosłego początkującego najlepszym wyborem jest ukulele koncertowe w cenie 250–500 zł. Dla dziecka poniżej 10 lat — sopranowe za 200–400 zł, z dobrymi strunami i kluczami zamkniętymi.
+keyTakeaways:
+- 'Dorosły początkujący: ukulele **koncertowe**, 250–500 zł.'
+- 'Dziecko 5–9 lat: **sopranowe**, 200–400 zł, klucze zamknięte.'
+- 'Gitarzysta: **barytonowe** (strój D-G-B-E) albo tenorowe.'
+- Zawsze dokup tuner clip-on i — w tańszych modelach — struny Aquila.
 ---
 
 ## Co to jest ukulele i czym różni się od gitary

@@ -1,23 +1,31 @@
 ---
-title: "Instrumenty muzyczne używane"
-h1: "Instrumenty muzyczne używane — na co uważać przy zakupie"
-description: "Jak nie dać się okantować przy zakupie używanego instrumentu. Check-listy do gitary, pianina, keyboardu i skrzypiec — plus realne widełki cenowe rynku wtórnego."
-keyword: "instrumenty muzyczne używane"
-category: "używane"
+title: Instrumenty muzyczne używane
+h1: Instrumenty muzyczne używane — na co uważać przy zakupie
+description: Jak nie dać się okantować przy zakupie używanego instrumentu. Check-listy do gitary, pianina, keyboardu i skrzypiec — plus realne widełki cenowe rynku wtórnego.
+keyword: instrumenty muzyczne używane
+category: używane
 readingTime: 10
-hero: '/heroes/uzywane.svg'
+hero: /heroes/uzywane.jpg
 updated: 2026-09-15
 faq:
-  - q: "Gdzie najbezpieczniej kupić używany instrument?"
-    a: "W komisie sklepu muzycznego — jest gwarancja i możliwość zwrotu. Na OLX/Vinted — tylko z oględzinami na miejscu, nigdy z wysyłką bez zwrotu. Portale specjalistyczne (gitarzysta.pl, harmony) mają lepiej wykwalifikowanych sprzedających."
-  - q: "O ile taniej używany instrument od nowego?"
-    a: "Realne dyskonto: 30-50% dla instrumentów 2-5 lat, 50-70% dla starszych. Wyjątek — instrumenty klasy premium (Yamaha C-series, Fender USA, Gibson) trzymają cenę dużo lepiej i mogą tracić tylko 15-25% wartości nawet po 10 latach."
-  - q: "Czy warto kupować akustyczne pianino używane?"
-    a: "Tylko po ocenie przez stroiciela (100-200 zł za wizytę). Ukryte koszty: renowacja mechaniki 800-3000 zł, wymiana młoteczków 1500-3000 zł, remont skrzyni rezonansowej — nieopłacalny. Bez oceny stroiciela nawet 'darmowe' pianino może być pułapką."
+- q: Gdzie najbezpieczniej kupić używany instrument?
+  a: W komisie sklepu muzycznego — jest gwarancja i możliwość zwrotu. Na OLX/Vinted — tylko z oględzinami na miejscu, nigdy z wysyłką bez zwrotu. Portale specjalistyczne (gitarzysta.pl, harmony) mają lepiej
+    wykwalifikowanych sprzedających.
+- q: O ile taniej używany instrument od nowego?
+  a: 'Realne dyskonto: 30-50% dla instrumentów 2-5 lat, 50-70% dla starszych. Wyjątek — instrumenty klasy premium (Yamaha C-series, Fender USA, Gibson) trzymają cenę dużo lepiej i mogą tracić tylko 15-25%
+    wartości nawet po 10 latach.'
+- q: Czy warto kupować akustyczne pianino używane?
+  a: 'Tylko po ocenie przez stroiciela (100-200 zł za wizytę). Ukryte koszty: renowacja mechaniki 800-3000 zł, wymiana młoteczków 1500-3000 zł, remont skrzyni rezonansowej — nieopłacalny. Bez oceny stroiciela
+    nawet ''darmowe'' pianino może być pułapką.'
 ctaCategories:
-  - label: "Komis instrumentów używanych"
-    sub: "Sprawdzone przez naszych techników, z gwarancją"
-    url: "https://muzyczny.pl/kategoria/komis/"
+- label: Komis instrumentów używanych
+  sub: Sprawdzone przez naszych techników, z gwarancją
+lead: 'Używane bezpiecznie: komis sklepu muzycznego (najlepiej) albo OLX z osobistym odbiorem. Realne dyskonto: 30–50% dla instrumentów 2–5 lat. Pianina akustyczne kupuj tylko po ocenie stroiciela.'
+keyTakeaways:
+- Nigdy nie kupuj **z wysyłką bez odbioru osobistego** i przetestowania.
+- Cena **40% poniżej dolnej widełki** = wada albo instrument kradziony.
+- Pianino akustyczne bez oceny stroiciela = **ryzyko drogiej renowacji**.
+- 'Vintage bez papierów: łatwo trafić na podróbkę — trzymaj się komisów.'
 ---
 
 Rynek używanych instrumentów w Polsce puchnie — dużo starszych osób odsprzedaje sprzęt po latach, a początkujący próbują wchodzić w hobby bez pełnego wydatku. Problem: 60-70% ofert na OLX to instrumenty, których cena jest wyliczona „od czapy" albo które mają ukryte wady niemożliwe do wychwycenia ze zdjęcia.

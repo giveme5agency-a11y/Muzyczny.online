@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracja: scena synthwave z małymi instrumentami dla dzieci">
+  <defs>
+    <linearGradient id="dz-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080610"></stop>
+      <stop offset="0.4" stop-color="#180f18"></stop>
+      <stop offset="0.62" stop-color="#3a1a12"></stop>
+      <stop offset="0.7" stop-color="#5a2a08"></stop>
+    </linearGradient>
+    <linearGradient id="dz-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE4A0"></stop>
+      <stop offset="0.4" stop-color="#FDB84A"></stop>
+      <stop offset="1" stop-color="#F58F00"></stop>
+    </linearGradient>
+    <linearGradient id="dz-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1408"></stop>
+      <stop offset="1" stop-color="#080304"></stop>
+    </linearGradient>
+    <radialGradient id="dz-glow" cx="0.5" cy="0.62" r="0.5">
+      <stop offset="0" stop-color="#F58F00" stop-opacity="0.5"></stop>
+      <stop offset="1" stop-color="#F58F00" stop-opacity="0"></stop>
+    </radialGradient>
+    <mask id="dz-sun-stripes">
+      <rect width="1200" height="500" fill="white"></rect>
+      <rect x="0" y="290" width="1200" height="3" fill="black"></rect>
+      <rect x="0" y="298" width="1200" height="4" fill="black"></rect>
+      <rect x="0" y="308" width="1200" height="5" fill="black"></rect>
+      <rect x="0" y="320" width="1200" height="6" fill="black"></rect>
+    </mask>
+  </defs>
+
+  <rect width="1200" height="310" fill="url(#dz-sky)"></rect>
+
+  
+  <g fill="#FDD478" opacity="0.75">
+    <circle cx="100" cy="80" r="1"></circle>
+    <circle cx="260" cy="50" r="1.3"></circle>
+    <circle cx="400" cy="95" r="0.9"></circle>
+    <circle cx="530" cy="55" r="1"></circle>
+    <circle cx="720" cy="80" r="1.2"></circle>
+    <circle cx="850" cy="55" r="0.9"></circle>
+    <circle cx="980" cy="115" r="1"></circle>
+    <circle cx="1120" cy="70" r="1.1"></circle>
+  </g>
+
+  
+  <g fill="#F58F00" opacity="0.65">
+    <g transform="translate(340, 130)">
+      <path d="M0 0 L0 -32 L14 -36 L14 -4 Z"></path>
+      <ellipse cx="-4" cy="0" rx="6" ry="4"></ellipse>
+      <ellipse cx="10" cy="-4" rx="6" ry="4"></ellipse>
+    </g>
+    <g transform="translate(780, 110) scale(0.8)">
+      <path d="M0 0 L0 -28 L12 -32 L12 -4 Z"></path>
+      <ellipse cx="-3" cy="0" rx="5" ry="3.5"></ellipse>
+      <ellipse cx="9" cy="-4" rx="5" ry="3.5"></ellipse>
+    </g>
+    <g transform="translate(950, 165) scale(0.6)">
+      <path d="M0 0 L0 -26 L10 -30 L10 -4 Z"></path>
+      <ellipse cx="-3" cy="0" rx="4.5" ry="3"></ellipse>
+      <ellipse cx="7" cy="-4" rx="4.5" ry="3"></ellipse>
+    </g>
+    <g transform="translate(180, 190) scale(0.55)">
+      <path d="M0 0 L0 -24 L9 -27 L9 -3 Z"></path>
+      <ellipse cx="-3" cy="0" rx="4" ry="3"></ellipse>
+    </g>
+  </g>
+
+  
+  <ellipse cx="600" cy="310" rx="550" ry="200" fill="url(#dz-glow)"></ellipse>
+
+  
+  <g mask="url(#dz-sun-stripes)">
+    <circle cx="600" cy="310" r="140" fill="url(#dz-sun)"></circle>
+  </g>
+
+  
+  <path d="M0 310 Q150 275 300 290 T600 285 T900 292 T1200 285 L1200 320 L0 320 Z" fill="#0a0405" opacity="0.85"></path>
+
+  
+  <rect y="310" width="1200" height="190" fill="url(#dz-ground)"></rect>
+
+  
+  <g stroke="#F58F00" fill="none" stroke-width="0.8" opacity="0.5">
+    <line x1="600" y1="310" x2="-200" y2="500"></line>
+    <line x1="600" y1="310" x2="-50" y2="500"></line>
+    <line x1="600" y1="310" x2="100" y2="500"></line>
+    <line x1="600" y1="310" x2="230" y2="500"></line>
+    <line x1="600" y1="310" x2="340" y2="500"></line>
+    <line x1="600" y1="310" x2="430" y2="500"></line>
+    <line x1="600" y1="310" x2="510" y2="500"></line>
+    <line x1="600" y1="310" x2="600" y2="500"></line>
+    <line x1="600" y1="310" x2="690" y2="500"></line>
+    <line x1="600" y1="310" x2="770" y2="500"></line>
+    <line x1="600" y1="310" x2="860" y2="500"></line>
+    <line x1="600" y1="310" x2="970" y2="500"></line>
+    <line x1="600" y1="310" x2="1100" y2="500"></line>
+    <line x1="600" y1="310" x2="1250" y2="500"></line>
+    <line x1="600" y1="310" x2="1400" y2="500"></line>
+  </g>
+  <g stroke="#F58F00" fill="none" stroke-width="0.8" opacity="0.5">
+    <line x1="0" y1="500" x2="1200" y2="500"></line>
+    <line x1="0" y1="450" x2="1200" y2="450"></line>
+    <line x1="0" y1="410" x2="1200" y2="410"></line>
+    <line x1="0" y1="380" x2="1200" y2="380"></line>
+    <line x1="0" y1="358" x2="1200" y2="358"></line>
+    <line x1="0" y1="342" x2="1200" y2="342"></line>
+    <line x1="0" y1="330" x2="1200" y2="330"></line>
+    <line x1="0" y1="322" x2="1200" y2="322"></line>
+    <line x1="0" y1="316" x2="1200" y2="316"></line>
+  </g>
+
+  
+  <g fill="#000" transform="translate(430, 405)">
+    <ellipse cx="0" cy="0" rx="34" ry="42"></ellipse>
+    <ellipse cx="0" cy="-25" rx="27" ry="27"></ellipse>
+    <rect x="-4" y="-100" width="8" height="52"></rect>
+    <rect x="-7" y="-114" width="14" height="6" rx="1"></rect>
+    <path d="M-9 -140 L9 -140 L11 -114 L-11 -114 Z"></path>
+    <circle cx="0" cy="-5" r="9" fill="#1a0f14"></circle>
+  </g>
+
+  
+  <g fill="#000" transform="translate(760, 400)">
+    <rect x="-60" y="-8" width="120" height="24" rx="2"></rect>
+    
+    <g fill="#1a0f14">
+      <rect x="-58" y="-6" width="14" height="20"></rect>
+      <rect x="-42" y="-6" width="14" height="20"></rect>
+      <rect x="-26" y="-6" width="14" height="20"></rect>
+      <rect x="-10" y="-6" width="14" height="20"></rect>
+      <rect x="6" y="-6" width="14" height="20"></rect>
+      <rect x="22" y="-6" width="14" height="20"></rect>
+      <rect x="38" y="-6" width="14" height="20"></rect>
+    </g>
+    
+    <g fill="#000">
+      <rect x="-48" y="-6" width="8" height="12"></rect>
+      <rect x="-32" y="-6" width="8" height="12"></rect>
+      <rect x="-4" y="-6" width="8" height="12"></rect>
+      <rect x="12" y="-6" width="8" height="12"></rect>
+      <rect x="28" y="-6" width="8" height="12"></rect>
+    </g>
+    
+    <rect x="-55" y="16" width="4" height="30"></rect>
+    <rect x="51" y="16" width="4" height="30"></rect>
+  </g>
+
+  
+  <g fill="#000" transform="translate(600, 415)">
+    <ellipse cx="0" cy="0" rx="22" ry="8"></ellipse>
+    <rect x="-22" y="-8" width="44" height="16"></rect>
+    <ellipse cx="0" cy="-8" rx="22" ry="6" fill="#1a0f14"></ellipse>
+  </g>
+</svg>

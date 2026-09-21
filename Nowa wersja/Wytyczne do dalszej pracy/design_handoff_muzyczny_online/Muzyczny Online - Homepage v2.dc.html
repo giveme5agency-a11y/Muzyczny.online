@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #F58F00; }
+  input::placeholder { color: #9A9A9A; }
+</style>
+</helmet>
+
+<div style="font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #2C2C2C; line-height: 1.5;">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #E8E6E1;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 20px; height: 66px; display: flex; align-items: center; gap: 16px;">
+      <a href="#" style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.2px; color: #1A1A1A;">muzyczny.<span style="color: #F58F00;">online</span></span>
+        <span style="font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B; border: 1px solid #E8E6E1; border-radius: 4px; padding: 3px 7px;">Poradniki</span>
+      </a>
+      <nav style="margin: 0 auto; display: flex; align-items: center; gap: 30px; font-size: 14px;">
+        <a href="#poradniki" style="padding: 6px 0;">Poradniki</a>
+        <a href="#" style="padding: 6px 0;">Kategorie</a>
+        <a href="#" style="padding: 6px 0;">O nas</a>
+      </nav>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: #1A1A1A; background: #F7F5F0; border: 1px solid #E8E6E1; border-radius: 6px; padding: 10px 16px;" style-hover="border-color: #1A1A1A;">Sklep muzyczny.pl <span style="font-size: 12px; color: #6B6B6B;">↗</span></a>
+    </div>
+  </header>
+
+  <section style="border-bottom: 1px solid #E8E6E1;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 20px;">
+      <div style="padding: 64px 0 66px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px; align-items: center;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B36400;">Poradniki zakupowe · muzyczny.pl</div>
+          <h1 style="margin: 20px 0 0; max-width: 560px; font-size: 48px; line-height: 1.05; font-weight: 700; letter-spacing: -1.5px; color: #1A1A1A; text-wrap: pretty;">Wybór instrumentu bez chodzenia po sklepach</h1>
+          <p style="margin: 22px 0 0; max-width: 520px; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 19px; line-height: 1.6; color: #4A4238; text-wrap: pretty;">Poradniki pisane przez ludzi, którzy sprzedali tysiące instrumentów — tylko to, co realnie decyduje, czy dziecko dalej gra po pół roku.</p>
+          <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="#poradniki" style="display: inline-flex; align-items: center; gap: 8px; padding: 15px 24px; font-size: 14px; font-weight: 500; border-radius: 6px; background: #1A1A1A; color: #FFFFFF;" style-hover="background: #333333;">Przeglądaj poradniki</a>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; padding: 15px 24px; font-size: 14px; font-weight: 500; border-radius: 6px; background: #FFFFFF; color: #1A1A1A; border: 1px solid #E8E6E1;" style-hover="border-color: #1A1A1A;">Sklep muzyczny.pl ↗</a>
+          </div>
+        </div>
+        <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E8E6E1;">
+          <div style="aspect-ratio: 4 / 3; background-color: #EFEBE0; background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.06) 0 12px, transparent 12px 24px); display: flex; align-items: flex-end; padding: 16px 18px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5; color: #8A8377;">[ zdjęcie hero: instrumenty na warsztacie<br />— gitara, ukulele, keyboard, ciepłe światło ]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="poradniki" style="max-width: 1240px; margin: 0 auto; padding: 64px 20px 84px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 0 24px;">
+      <h2 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: #1A1A1A;">Najnowsze poradniki</h2>
+      <a href="#" style="font-size: 13px; color: #6B6B6B; text-decoration: underline; text-underline-offset: 4px;">Wszystkie</a>
+    </div>
+
+    <article style="background: #FFFFFF; border: 1px solid #E8E6E1; border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); transition: box-shadow 0.18s;" style-hover="box-shadow: 0 14px 34px rgba(26,26,26,0.12);">
+      <div style="min-height: 300px; background-color: #EFEBE0; background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.06) 0 10px, transparent 10px 20px); display: flex; align-items: flex-end; padding: 14px 16px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8A8377;">[ zdjęcie: dziecko przy keyboardzie ]</span>
+      </div>
+      <div style="padding: 36px 36px 38px; display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+          <span style="color: #1A1A1A; background: #FDF3E0; border-radius: 4px; padding: 4px 8px;">Najnowszy</span>
+          <span style="color: #B36400;">Dzieci</span>
+          <span style="color: #9A9A9A;">8 min</span>
+        </div>
+        <h3 style="margin: 18px 0 0; font-size: 28px; line-height: 1.18; font-weight: 600; letter-spacing: -0.7px; color: #1A1A1A; text-wrap: pretty;">Instrumenty muzyczne dla dzieci</h3>
+        <p style="margin: 14px 0 0; max-width: 460px; font-family: 'Source Serif 4', Charter, Georgia, serif; font-size: 17px; line-height: 1.62; color: #4A4238; text-wrap: pretty;">Wiek, rozmiar, budżet i najczęstsze błędy rodziców — wszystko na bazie doświadczenia z tysięcy realnych sprzedaży.</p>
+        <a href="Muzyczny Online — Landing artykułu v2.dc.html" style="margin-top: 26px; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-size: 14px; font-weight: 500; border-radius: 6px; background: #1A1A1A; color: #FFFFFF;" style-hover="background: #333333;">Czytaj poradnik →</a>
+      </div>
+    </article>
+
+    <div style="margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px;">
+
+      <article style="background: #FFFFFF; border: 1px solid #E8E6E1; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.18s, transform 0.18s;" style-hover="box-shadow: 0 14px 30px rgba(26,26,26,0.11); transform: translateY(-3px);">
+        <div style="aspect-ratio: 16 / 9; background-color: #EFEBE0; background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.06) 0 10px, transparent 10px 20px); display: flex; align-items: flex-end; padding: 12px 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8A8377;">[ zdjęcie: ukulele sopranowe ]</span>
+        </div>
+        <div style="padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Ukulele</span>
+            <span style="color: #9A9A9A;">9 min</span>
+          </div>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.3px; color: #1A1A1A; text-wrap: pretty;">Jak wybrać pierwsze ukulele</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6B6B6B; text-wrap: pretty;">Rozmiary, realne widełki cenowe, sprawdzone marki i akcesoria, które warto kupić od razu.</p>
+          <span style="margin-top: auto; padding-top: 16px;"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: #1A1A1A; border-bottom: 1px solid #F58F00; padding-bottom: 2px;">Czytaj poradnik →</span></span>
+        </div>
+      </article>
+
+      <article style="background: #FFFFFF; border: 1px solid #E8E6E1; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.18s, transform 0.18s;" style-hover="box-shadow: 0 14px 30px rgba(26,26,26,0.11); transform: translateY(-3px);">
+        <div style="aspect-ratio: 16 / 9; background-color: #EFEBE0; background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.06) 0 10px, transparent 10px 20px); display: flex; align-items: flex-end; padding: 12px 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8A8377;">[ zdjęcie: używana gitara akustyczna ]</span>
+        </div>
+        <div style="padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Używane</span>
+            <span style="color: #9A9A9A;">10 min</span>
+          </div>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.3px; color: #1A1A1A; text-wrap: pretty;">Instrumenty muzyczne używane</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6B6B6B; text-wrap: pretty;">Check-listy do gitary, pianina, keyboardu i skrzypiec — plus realne widełki rynku wtórnego.</p>
+          <span style="margin-top: auto; padding-top: 16px;"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: #1A1A1A; border-bottom: 1px solid #F58F00; padding-bottom: 2px;">Czytaj poradnik →</span></span>
+        </div>
+      </article>
+
+      <article style="background: #FFFFFF; border: 1px solid #E8E6E1; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.18s, transform 0.18s;" style-hover="box-shadow: 0 14px 30px rgba(26,26,26,0.11); transform: translateY(-3px);">
+        <div style="aspect-ratio: 16 / 9; background-color: #EFEBE0; background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.06) 0 10px, transparent 10px 20px); display: flex; align-items: flex-end; padding: 12px 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8A8377;">[ zdjęcie: pianino akustyczne, wnętrze ]</span>
+        </div>
+        <div style="padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Akustyczne</span>
+            <span style="color: #9A9A9A;">9 min</span>
+          </div>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.3px; color: #1A1A1A; text-wrap: pretty;">Instrumenty muzyczne akustyczne</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6B6B6B; text-wrap: pretty;">Kiedy warto akustyk, a kiedy lepsza wersja cyfrowa lub elektryczna — od gitar po instrumenty dęte.</p>
+          <span style="margin-top: auto; padding-top: 16px;"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: #1A1A1A; border-bottom: 1px solid #F58F00; padding-bottom: 2px;">Czytaj poradnik →</span></span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section style="background: #1A1A1A; background-image: radial-gradient(520px 260px at 18% 40%, rgba(245,143,0,0.16), transparent 70%), radial-gradient(420px 220px at 72% 80%, rgba(245,143,0,0.10), transparent 70%);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 72px 20px 78px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+      <div>
+        <h2 style="margin: 0; font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.6px; color: #FFFFFF; text-wrap: pretty;">Nowy poradnik co dwa tygodnie</h2>
+        <p style="margin: 18px 0 0; max-width: 420px; font-size: 15px; line-height: 1.65; color: #B8B8B8; text-wrap: pretty;">Dostajesz krótkiego maila z jednym praktycznym poradnikiem — jak wybrać instrument, na co uważać, ile realnie kosztuje. Zero spamu, zero reklam.</p>
+      </div>
+      <div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <input type="email" placeholder="twoj@email.pl" style="flex: 1; min-width: 220px; padding: 15px 18px; font-family: inherit; font-size: 14px; color: #FFFFFF; background: rgba(255,255,255,0.05); border: 1px solid #3A3A3A; border-radius: 6px; outline: none;" style-focus="border-color: #F58F00;" />
+          <button type="button" style="padding: 15px 24px; font-family: inherit; font-size: 14px; font-weight: 600; color: #1A1A1A; background: #F58F00; border: none; border-radius: 6px; cursor: pointer;" style-hover="background: #FFFFFF;">Zapisz mnie</button>
+        </div>
+        <label style="margin-top: 16px; display: flex; align-items: flex-start; gap: 10px; font-size: 12px; line-height: 1.55; color: #9A9A9A;">
+          <input type="checkbox" style="margin: 2px 0 0; accent-color: #F58F00;" />
+          <span>Wyrażam zgodę na przetwarzanie moich danych zgodnie z <a href="#" style="color: #F58F00; text-decoration: underline; text-underline-offset: 3px;">polityką prywatności</a>.</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #1A1A1A; color: #B8B8B8;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 62px 20px 0; display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 40px;">
+      <div>
+        <div style="font-size: 16px; font-weight: 700; color: #FFFFFF;">muzyczny.online</div>
+        <p style="margin: 16px 0 0; max-width: 320px; font-size: 13px; line-height: 1.7; color: #9A9A9A; text-wrap: pretty;">Poradniki i przewodniki zakupowe po instrumentach muzycznych. Serwis siostrzany sklepu muzyczny.pl.</p>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Poradniki</div>
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+          <a href="#">Dla dzieci</a>
+          <a href="#">Używane</a>
+          <a href="#">Akustyczne</a>
+          <a href="#">Profesjonalne</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Kategorie</div>
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+          <a href="#">Wszystkie poradniki</a>
+          <a href="#">Wg wieku</a>
+          <a href="#">Wg budżetu</a>
+          <a href="#">Wg poziomu</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Sklep</div>
+        <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+          <a href="#">muzyczny.pl</a>
+          <a href="#">Kontakt</a>
+          <a href="#">O nas</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 20px;">
+      <div style="margin-top: 54px; padding: 24px 0 30px; border-top: 1px solid #2C2C2C; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; font-size: 13px; color: #6B6B6B;">
+        <span>© 2026 muzyczny.pl · Wszystkie prawa zastrzeżone</span>
+        <span style="display: flex; align-items: center; gap: 10px;"><a href="#">Polityka prywatności</a> · <a href="#">Regulamin</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div style="background: #EFEBE0; border-top: 1px solid #E8E6E1; padding: 40px 20px 56px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B;">Mobile 390px · wariant 1e (lista bez miniaturek)</div>
+      <div style="margin-top: 18px; width: 390px; max-width: 100%; background: #FFFFFF; border: 1px solid #E8E6E1; border-radius: 10px; overflow: hidden;">
+        <div style="padding: 14px 18px; border-bottom: 1px solid #E8E6E1; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-size: 15px; font-weight: 700; color: #1A1A1A;">muzyczny.<span style="color: #F58F00;">online</span></span>
+          <span style="display: flex; flex-direction: column; gap: 5px; padding: 14px; margin: -14px;">
+            <span style="display: block; width: 20px; height: 2px; background: #1A1A1A;"></span>
+            <span style="display: block; width: 20px; height: 2px; background: #1A1A1A;"></span>
+          </span>
+        </div>
+        <div style="padding: 22px 18px 20px; border-bottom: 1px solid #E8E6E1;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #B36400;">Poradniki zakupowe</div>
+          <h3 style="margin: 12px 0 0; font-size: 28px; line-height: 1.08; font-weight: 700; letter-spacing: -0.9px; color: #1A1A1A; text-wrap: pretty;">Wybór instrumentu bez chodzenia po sklepach</h3>
+          <p style="margin: 14px 0 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 16px; line-height: 1.6; color: #4A4238; text-wrap: pretty;">Poradniki pisane przez ludzi, którzy sprzedali tysiące instrumentów.</p>
+          <a href="#" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; font-size: 15px; font-weight: 500; border-radius: 6px; background: #1A1A1A; color: #FFFFFF;">Przeglądaj poradniki</a>
+        </div>
+        <div style="padding: 18px 18px 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #6B6B6B;">Najnowsze poradniki</div>
+        <a href="#" style="display: block; padding: 16px 18px; border-bottom: 1px solid #F0EEE9; min-height: 48px;" style-hover="background: #F7F5F0;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Dzieci</span><span style="color: #9A9A9A;">8 min</span>
+          </div>
+          <div style="margin-top: 8px; display: flex; align-items: flex-start; gap: 14px; justify-content: space-between;">
+            <div>
+              <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Instrumenty muzyczne dla dzieci</div>
+              <div style="margin-top: 6px; font-size: 13px; line-height: 1.55; color: #6B6B6B;">Wiek, rozmiar, budżet, błędy rodziców.</div>
+            </div>
+            <span style="flex: 0 0 auto; font-size: 18px; color: #F58F00; min-width: 24px; text-align: right;">→</span>
+          </div>
+        </a>
+        <a href="#" style="display: block; padding: 16px 18px; border-bottom: 1px solid #F0EEE9; min-height: 48px;" style-hover="background: #F7F5F0;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Ukulele</span><span style="color: #9A9A9A;">9 min</span>
+          </div>
+          <div style="margin-top: 8px; display: flex; align-items: flex-start; gap: 14px; justify-content: space-between;">
+            <div>
+              <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Jak wybrać pierwsze ukulele</div>
+              <div style="margin-top: 6px; font-size: 13px; line-height: 1.55; color: #6B6B6B;">Rozmiary, ceny, marki, akcesoria.</div>
+            </div>
+            <span style="flex: 0 0 auto; font-size: 18px; color: #F58F00; min-width: 24px; text-align: right;">→</span>
+          </div>
+        </a>
+        <a href="#" style="display: block; padding: 16px 18px; border-bottom: 1px solid #F0EEE9; min-height: 48px;" style-hover="background: #F7F5F0;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Używane</span><span style="color: #9A9A9A;">10 min</span>
+          </div>
+          <div style="margin-top: 8px; display: flex; align-items: flex-start; gap: 14px; justify-content: space-between;">
+            <div>
+              <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Instrumenty muzyczne używane</div>
+              <div style="margin-top: 6px; font-size: 13px; line-height: 1.55; color: #6B6B6B;">Check-listy i widełki rynku wtórnego.</div>
+            </div>
+            <span style="flex: 0 0 auto; font-size: 18px; color: #F58F00; min-width: 24px; text-align: right;">→</span>
+          </div>
+        </a>
+        <a href="#" style="display: block; padding: 16px 18px; min-height: 48px;" style-hover="background: #F7F5F0;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;">
+            <span style="color: #B36400;">Akustyczne</span><span style="color: #9A9A9A;">9 min</span>
+          </div>
+          <div style="margin-top: 8px; display: flex; align-items: flex-start; gap: 14px; justify-content: space-between;">
+            <div>
+              <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; color: #1A1A1A;">Instrumenty muzyczne akustyczne</div>
+              <div style="margin-top: 6px; font-size: 13px; line-height: 1.55; color: #6B6B6B;">Akustyk czy cyfra — kiedy co.</div>
+            </div>
+            <span style="flex: 0 0 auto; font-size: 18px; color: #F58F00; min-width: 24px; text-align: right;">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

@@ -6,14 +6,26 @@ export async function getStaticPaths() {
   const landings = await getCollection('landings', ({ data }) => data.published);
   return landings.map((entry) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, all: landings },
   }));
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { entry, all } = Astro.props;
+const { Content, headings } = await entry.render();
+
+// Related posts — pick 3 other landings, prefer same category first
+const others = all.filter((l) => l.slug !== entry.slug);
+const sameCategory = others.filter((l) => l.data.category === entry.data.category);
+const rest = others.filter((l) => l.data.category !== entry.data.category);
+const relatedRaw = [...sameCategory, ...rest].slice(0, 3);
+const related = relatedRaw.map((l) => ({
+  title: l.data.title,
+  href: `/${l.slug}/`,
+  category: l.data.category,
+  readingTime: l.data.readingTime,
+}));
 ---
 
-<LandingLayout frontmatter={entry.data} slug={entry.slug}>
+<LandingLayout frontmatter={entry.data} slug={entry.slug} headings={headings} related={related}>
   <Content />
 </LandingLayout>

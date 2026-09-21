@@ -1,0 +1,110 @@
+---
+// FAQ accordion with rotating chevron
+export interface Props {
+  items: Array<{ q: string; a: string }>;
+}
+const { items } = Astro.props;
+---
+
+<section class="faq" id="faq" aria-label="Najczęstsze pytania">
+  <h2>Najczęstsze pytania</h2>
+  <div class="faq-list">
+    {items.map((item, i) => (
+      <details class={i === items.length - 1 ? 'faq-item faq-item--last' : 'faq-item'}>
+        <summary>
+          <span class="faq-q">{item.q}</span>
+          <svg class="faq-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </summary>
+        <div class="faq-answer">
+          <p>{item.a}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq {
+    max-width: var(--container-narrow);
+    margin: 56px auto 0;
+    padding: 0 20px;
+    scroll-margin-top: 80px;
+  }
+
+  .faq h2 {
+    margin: 0 0 18px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .faq-list { display: block; }
+
+  .faq-item {
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-item--last {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 48px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    border-radius: var(--radius);
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.15s var(--ease-out);
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item[open] summary {
+    background: var(--cream);
+  }
+
+  .faq-q {
+    text-wrap: pretty;
+  }
+
+  .faq-chev {
+    color: var(--orange);
+    flex-shrink: 0;
+    transition: transform 0.18s var(--ease-out);
+  }
+
+  .faq-item[open] .faq-chev {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 4px 16px 20px 28px;
+    border-left: 2px solid var(--orange-tint);
+    margin: 0 16px 16px;
+  }
+
+  .faq-answer p {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 600px) {
+    .faq-item summary { padding: 14px 12px; font-size: 15px; }
+    .faq-answer { padding: 4px 12px 18px 20px; margin: 0 12px 12px; }
+    .faq-answer p { font-size: 15px; }
+  }
+</style>
